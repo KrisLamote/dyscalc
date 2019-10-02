@@ -19,8 +19,8 @@ export const pickSome = (arr, amount) => {
     const picked = [];
     for (let i = 0; i < amount; i++) {
         const idx = Math.floor(Math.random() * arr.length);
-        const elements = arr.splice(idx, 1);
-        picked.push(elements[0]);
+        const deleted = arr.splice(idx, 1);
+        picked.push(deleted[0]);
     }
 
     return picked;
