@@ -1,15 +1,4 @@
 // generate a range based on start & stop params ( range(2, 7) => [2, 3, 4, 5, 6, 7] )
-export const buggedRange = (start, stop) => {
-    let rangeArr = [];
-    for (let i = start; i < stop++; i++) {
-        // having stop++ inside the evaluation increments stop with every stop
-        // leading to an endless loop
-        console.log(i, start, stop, rangeArr);
-        rangeArr.push(start++);
-    }
-    return range;
-};
-
 export const range = (start, end) => {
     return Array(end - start + 1)
         .fill()
