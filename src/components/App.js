@@ -3,7 +3,7 @@ import Board from './Board';
 import { pickSome, range } from '../helpers';
 
 const App = () => {
-    const targets = pickSome(range(2, 10), 3);
+    const targets = pickSome(range(2, 10), 3).sort((a, b) => a - b);
 
     const renderTargetCell = (target, idx) => {
         const key = `target-${idx}`;
