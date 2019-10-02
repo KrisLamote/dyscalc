@@ -13,15 +13,23 @@ React app to allow children with dyscalculia to practice sums up to 10 or 20
 
 3. Make a feature branch for the issue
 
-   ```git checkout -b 'your-feature-branch-name'```
+   ```git checkout -b some-feature-branch```
 
-4. Install the packages
+4. Install the packages & launch the application
    (you'll also need to do this whenever you pull changes to the yarn.lock file)
 
-   ```yarn install```
+   ```
+   yarn install
+   yarn start
+   ```
 
-5. Start app
+5. Commit & push your updates
 
-   ```yarn start```
-
-6. Start to code new feature :)
+   ```
+   git commit -m 'some useful message about what you did'
+   git push origin some-feature-branch
+   ```
+6. Create a Pull Request
+   From your GitHub profile page you can launch a pull request
+   
+HAVE FUN!
