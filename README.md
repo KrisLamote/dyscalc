@@ -4,20 +4,24 @@ React app to allow children with dyscalculia to practice sums up to 10 or 20
 
 ## Getting Started
 
-1. Clone the repository on your local machine with ssh (or https)
+1. Fork the repository (top right hand corner)
+   This will add a fork to your own repositories
 
-```git clone https://github.com/KrisLamote/dyscalc.git```
+2. Clone your fork on your local machine with ssh (or https)
 
-2. Make a feature branch for the issue
+   ```git clone https://github.com/<your-user>/dyscalc.git```
 
-```git checkout -b 'your-feature-branch-name'```
+3. Make a feature branch for the issue
 
-3. Install the packages
+   ```git checkout -b 'your-feature-branch-name'```
 
-```yarn install```
+4. Install the packages
+   (you'll also need to do this whenever you pull changes to the yarn.lock file)
 
-4. Start app
+   ```yarn install```
 
-```yarn start```
+5. Start app
 
-5. Start to code new feature :)
+   ```yarn start```
+
+6. Start to code new feature :)
