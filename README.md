@@ -2,7 +2,22 @@
 
 React app to allow children with dyscalculia to practice sums up to 10 or 20
 
-## Getting Started
+## How to play
+
+1. clone the repository locally
+
+   ```git clone https://github.com/KrisLamote/dyscalc.git```
+   
+2. Install the packages & launch the app
+
+   ```
+   yarn install
+   yarn start
+   ```
+3. Have fun!
+
+
+## How to contribute
 
 1. Fork the repository (top right hand corner)
    This will add a fork to your own repositories
@@ -32,4 +47,4 @@ React app to allow children with dyscalculia to practice sums up to 10 or 20
 6. Create a Pull Request
    From your GitHub profile page you can launch a pull request
    
-HAVE FUN!
+THANK YOU!
