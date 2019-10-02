@@ -1,4 +1,5 @@
 import React from 'react';
+import Board from "./Board";
 
 const App = () => (
   <div className="container">
@@ -11,64 +12,7 @@ const App = () => (
       <div className="col-4" />
     </div>
     <div className="row">
-      <div id="board" className="col-8">
-        <div className="row">
-          <div className="col-md-3 cell">
-            <div className="cell-content">2 + 4</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">1 + 5</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">6 + 2</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">3 + 5</div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-3 cell">
-            <div className="cell-content">7 + 2</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">7 + 2</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">5 + 3</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">3 + 3</div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-3 cell">
-            <div className="cell-content">5 + 1</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">2 + 4</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">5 + 4</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">4 + 5</div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-md-3 cell">
-            <div className="cell-content">4 + 2</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">3 + 3</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">2 + 7</div>
-          </div>
-          <div className="col-md-3 cell">
-            <div className="cell-content">8 + 1</div>
-          </div>
-        </div>
-      </div>
+      <Board />
       <div className="col-4">
         <div className="row justify-content-md-center no-gutters">
           <div id="targets" className="col-md-auto" style={{ width: '150px' }}>
