@@ -2,19 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Row from './Row';
 
-const targets = [6, 8, 9];
-
-const Board = ({ children }) => (
-    <div id="board" className="col-8">
-        <Row targets={targets} />
-        <Row targets={targets} />
-        <Row targets={targets} />
-        <Row targets={targets} />
-    </div>
-);
+const Board = ({ targets }) => {
+    return (
+        <div id="board" className="col-8">
+            <Row targets={targets} />
+            <Row targets={targets} />
+            <Row targets={targets} />
+            <Row targets={targets} />
+        </div>
+    );
+};
 
 Board.propTypes = {
-    children: PropTypes.node
+    targets: PropTypes.array.isRequired
 };
 
 export default Board;
