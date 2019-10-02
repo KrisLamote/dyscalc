@@ -5,6 +5,15 @@ import { pickSome, range } from '../helpers';
 const App = () => {
     const targets = pickSome(range(2, 10), 3);
 
+    const renderTargetCell = (target, idx) => {
+        const key = `target-${idx}`;
+        return (
+            <div key={key} className={`cell target ${key}`}>
+                <div className="cell-content">{target}</div>
+            </div>
+        );
+    };
+
     return (
         <div className="container">
             <div className="row">
@@ -24,15 +33,9 @@ const App = () => {
                             className="col-md-auto"
                             style={{ width: '150px' }}
                         >
-                            <div className="cell target target-0">
-                                <div className="cell-content">6</div>
-                            </div>
-                            <div className="cell target target-1">
-                                <div className="cell-content">8</div>
-                            </div>
-                            <div className="cell target target-2">
-                                <div className="cell-content">9</div>
-                            </div>
+                            {targets.map((target, idx) =>
+                                renderTargetCell(target, idx)
+                            )}
                         </div>
                     </div>
                     <div className="row justify-content-md-center no-gutters">
