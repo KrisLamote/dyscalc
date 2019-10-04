@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from './Header';
 import Board from './Board';
 import Targets from './Targets';
@@ -7,7 +7,9 @@ import Reset from './Reset';
 import { pickSome, range } from '../helpers';
 
 const App = () => {
-    const targets = pickSome(range(2, 10), 3).sort((a, b) => a - b);
+
+    const generateTargets = () => pickSome(range(2, 10), 3).sort((a, b) => a - b);
+    const [targets, setTargets] = useState(generateTargets());
 
     return (
         <div className="container">
@@ -21,7 +23,7 @@ const App = () => {
                     <Verify />
                 </div>
             </div>
-            <Reset />
+            <Reset onClick={() => setTargets(generateTargets())} />
         </div>
     );
 };
