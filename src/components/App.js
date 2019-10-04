@@ -1,11 +1,9 @@
 import React from 'react';
-
 import Header from './Header';
 import Board from './Board';
 import Targets from './Targets';
 import Verify from './Verify';
 import Reset from './Reset';
-
 import { pickSome, range } from '../helpers';
 
 const App = () => {

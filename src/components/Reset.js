@@ -12,6 +12,6 @@ const Reset = () => (
             </div>
         </div>
     </div>
-)
+);
 
-export default Reset
+export default Reset;

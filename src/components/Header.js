@@ -9,6 +9,6 @@ const Header = () => (
         </div>
         <div className="col-4" />
     </div>
-)
+);
 
-export default Header
+export default Header;
