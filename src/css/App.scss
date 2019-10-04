@@ -13,6 +13,10 @@ header {
 
 #targets {
   border: 2px solid #453411;
+  width: 100%;
+  @media (min-width: 576px) {
+    width: 150px;
+  }
 }
 
 .cell {
@@ -61,15 +65,18 @@ header {
   background-color: #38c172;
 }
 
-#verify {
+#verify, #reset {
   padding-top: 10px;
 }
 
 #verify button,
 #reset button {
-  width: 150px;
+  width: 100%;
   border: #2779bd solid 3px;
   border-radius: 0;
+  @media (min-width: 540px) {
+    width: 150px;
+  }
 }
 
 #verify button:hover,

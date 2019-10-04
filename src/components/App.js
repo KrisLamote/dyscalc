@@ -15,15 +15,17 @@ const App = () => {
         <div className="container">
             <Header />
             <div className="row">
-                <Board targets={targets} />
+                <div className="col-8">
+                  <Board targets={targets} />
+                </div>
                 <div className="col-4">
                     <div className="row justify-content-md-center no-gutters">
                         <Targets targets={targets} />
                     </div>
                     <Verify />
+                    <Reset onClick={() => setTargets(generateTargets())} />
                 </div>
             </div>
-            <Reset onClick={() => setTargets(generateTargets())} />
         </div>
     );
 };

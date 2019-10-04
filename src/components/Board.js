@@ -4,7 +4,7 @@ import Row from './Row';
 
 const Board = ({ targets }) => {
     return (
-        <div id="board" className="col-8">
+        <div id="board">
             <Row targets={targets} />
             <Row targets={targets} />
             <Row targets={targets} />
