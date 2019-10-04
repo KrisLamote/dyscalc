@@ -84,3 +84,13 @@ header {
   color: #cc1f1a;
   padding: 7px;
 }
+
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 1000ms linear;
+}
