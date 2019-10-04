@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
 
 const Reset = ({ onClick }) => (
@@ -15,9 +15,8 @@ const Reset = ({ onClick }) => (
     </div>
 );
 
-React.propTypes = {
-  targets: PropTypes.func.isRequired
+Reset.propTypes = {
+    onClick: PropTypes.func.isRequired
 };
-
 
 export default Reset;
