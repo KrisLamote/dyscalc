@@ -4,7 +4,7 @@ import Cell from './Cell';
 
 const Row = ({ targets }) => {
     return (
-        <div className="row">
+        <div className="row no-gutters">
             <Cell targets={targets} />
             <Cell targets={targets} />
             <Cell targets={targets} />
