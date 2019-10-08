@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
 
 const Verify = () => (
     <div className="row justify-content-md-center no-gutters">
@@ -7,5 +8,9 @@ const Verify = () => (
         </div>
     </div>
 );
+
+Verify.propTypes = {
+    onClick: PropTypes.func
+};
 
 export default Verify;

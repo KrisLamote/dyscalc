@@ -1,19 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Row from './Row';
+import React from "react";
+import PropTypes from "prop-types";
+import Row from "./Row";
 
-const Board = ({ targets }) => {
+const Board = ({ current, targets }) => {
     return (
         <div id="board">
-            <Row targets={targets} />
-            <Row targets={targets} />
-            <Row targets={targets} />
-            <Row targets={targets} />
+            <Row current={current} targets={targets} />
+            <Row current={current} targets={targets} />
+            <Row current={current} targets={targets} />
+            <Row current={current} targets={targets} />
         </div>
     );
 };
 
 Board.propTypes = {
+    current: PropTypes.object,
     targets: PropTypes.array.isRequired
 };
 
