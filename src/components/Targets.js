@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
@@ -26,6 +26,13 @@ const Targets = ({ setCurrent, targets }) => {
             </div>
         );
     };
+
+    useEffect(
+        () => {
+            setActiveTarget(null);
+        },
+        [targets]
+    );
 
     return (
         <div className="row justify-content-md-center no-gutters">
