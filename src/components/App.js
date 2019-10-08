@@ -17,7 +17,7 @@ const App = () => {
             <Header />
             <div className="row">
                 <div className="col-8">
-                    <Board current={current} targets={targets} />
+                    <Board current={current} showErrors={showErrors} targets={targets} />
                 </div>
                 <div className="col-4">
                     <Targets targets={targets} setCurrent={setCurrent} />
