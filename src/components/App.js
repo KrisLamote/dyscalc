@@ -10,6 +10,7 @@ const App = () => {
     const generateTargets = () => pickSome(range(2, 10), 3).sort((a, b) => a - b);
     const [targets, setTargets] = useState(generateTargets());
     const [current, setCurrent] = useState({ idx: null, value: null });
+    const [showErrors, setShowErrors] = useState(false);
 
     return (
         <div className="container">
@@ -20,7 +21,10 @@ const App = () => {
                 </div>
                 <div className="col-4">
                     <Targets targets={targets} setCurrent={setCurrent} />
-                    <Verify />
+                    <Verify
+                        showErrors={showErrors}
+                        toggle={() => setShowErrors(!showErrors)}
+                    />
                 </div>
             </div>
             <div className="row">
