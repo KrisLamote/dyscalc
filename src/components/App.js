@@ -9,7 +9,7 @@ import { pickSome, range } from "../helpers";
 const App = () => {
     const generateTargets = () => pickSome(range(2, 10), 3).sort((a, b) => a - b);
     const [targets, setTargets] = useState(generateTargets());
-    const [current, setCurrent] = useState(null);
+    const [current, setCurrent] = useState({ idx: null, value: null });
 
     return (
         <div className="container">

@@ -5,13 +5,13 @@ import classNames from "classnames";
 const Targets = ({ setCurrent, targets }) => {
     const [activeTarget, setActiveTarget] = useState(null);
 
-    const handleTargetClick = idx => {
+    const handleTargetClick = (idx, value) => {
         const newValue = activeTarget === idx ? null : idx;
         setActiveTarget(newValue);
-        setCurrent(newValue);
+        setCurrent({ idx, value });
     };
 
-    const renderTargetCell = (target, idx) => {
+    const renderTargetCell = (value, idx) => {
         const key = `target-${idx}`;
         const combinedClassNames = classNames("cell", "target", key, {
             selected: activeTarget === idx
@@ -20,9 +20,9 @@ const Targets = ({ setCurrent, targets }) => {
             <div
                 key={key}
                 className={combinedClassNames}
-                onClick={() => handleTargetClick(idx)}
+                onClick={() => handleTargetClick(idx, value)}
             >
-                <div className="cell-content">{target}</div>
+                <div className="cell-content">{value}</div>
             </div>
         );
     };

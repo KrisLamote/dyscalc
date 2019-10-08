@@ -14,7 +14,7 @@ const Board = ({ current, targets }) => {
 };
 
 Board.propTypes = {
-    current: PropTypes.number,
+    current: PropTypes.object,
     targets: PropTypes.array.isRequired
 };
 

@@ -14,7 +14,7 @@ const Row = ({ current, targets }) => {
 };
 
 Row.propTypes = {
-    current: PropTypes.number,
+    current: PropTypes.object,
     targets: PropTypes.array.isRequired
 };
 
