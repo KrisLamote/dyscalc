@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Board from "./Board";
 import Targets from "./Targets";
@@ -11,6 +11,10 @@ const App = () => {
     const [targets, setTargets] = useState(generateTargets());
     const [current, setCurrent] = useState({ idx: null, value: null });
     const [showErrors, setShowErrors] = useState(false);
+
+    useEffect(() => {
+        setShowErrors(false);
+    }, [targets]);
 
     return (
         <div className="container">

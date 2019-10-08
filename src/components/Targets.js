@@ -11,12 +11,9 @@ const Targets = ({ setCurrent, targets }) => {
         setCurrent({ idx, value: targets[idx] });
     };
 
-    useEffect(
-        () => {
-            setActiveTarget(null);
-        },
-        [targets]
-    );
+    useEffect(() => {
+        setActiveTarget(null);
+    }, [targets]);
 
     return (
         <div className="row justify-content-md-center no-gutters">
