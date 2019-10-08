@@ -1,19 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Cell from './Cell';
+import React from "react";
+import PropTypes from "prop-types";
+import Cell from "./Cell";
 
-const Row = ({ targets }) => {
+const Row = ({ current, targets }) => {
     return (
         <div className="row no-gutters">
-            <Cell targets={targets} />
-            <Cell targets={targets} />
-            <Cell targets={targets} />
-            <Cell targets={targets} />
+            <Cell current={current} targets={targets} />
+            <Cell current={current} targets={targets} />
+            <Cell current={current} targets={targets} />
+            <Cell current={current} targets={targets} />
         </div>
     );
 };
 
 Row.propTypes = {
+    current: PropTypes.number,
     targets: PropTypes.array.isRequired
 };
 

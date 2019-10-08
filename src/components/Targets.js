@@ -1,30 +1,45 @@
-import React, { useState } from "react";
-import classNames from "classnames";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import TargetCell from './TargetCell';
 
-const Targets = ({ targets }) => {
-  const [activeTarget, setActiveTarget] = useState('');
+const Targets = ({ setCurrent, targets }) => {
+    const [activeTarget, setActiveTarget] = useState(null);
 
-  const handleTargetClick = id => activeTarget === id ? setActiveTarget('') : setActiveTarget(id);
+    const handleTargetClick = idx => {
+        const newValue = activeTarget === idx ? null : idx;
+        setActiveTarget(newValue);
+        setCurrent(newValue);
+    };
 
-  const renderTargetCell = (target, idx) => {
-    const key = `target-${idx}`;
-    const combinedClassNames = classNames('cell', 'target', key, {selected: activeTarget === idx})
+    const renderTargetCell = (target, idx) => {
+        const key = `target-${idx}`;
+        const combinedClassNames = classNames('cell', 'target', key, {
+            selected: activeTarget === idx
+        });
+        return (
+            <div
+                key={key}
+                className={combinedClassNames}
+                onClick={() => handleTargetClick(idx)}
+            >
+                <div className="cell-content">{target}</div>
+            </div>
+        );
+    };
+
     return (
-      <div
-        key={key}
-        className={combinedClassNames}
-        onClick={() => handleTargetClick(idx)}
-      >
-        <div className="cell-content">{target}</div>
-      </div>
+        <div className="row justify-content-md-center no-gutters">
+            <div id="targets" className="col-md-auto" style={{ width: '150px' }}>
+                {targets.map((target, idx) => renderTargetCell(target, idx))}
+            </div>
+        </div>
     );
-  };
+};
 
-  return (
-    <div id="targets" className="col-md-auto" style={{ width: "150px" }}>
-      {targets.map((target, idx) => renderTargetCell(target, idx))}
-    </div>
-  );
+Targets.propTypes = {
+    setCurrent: PropTypes.func.isRequired,
+    targets: PropTypes.array.isRequired
 };
 
 export default Targets;
