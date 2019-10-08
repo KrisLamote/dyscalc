@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classNames from "classnames";
 
 const TargetCell = ({ idx, target, selected, onClick }) => {
-    const className = selected ? "selected " : "";
+    const className = classNames(`cell target target-${idx}`, { selected });
 
     return (
-        <div className={`cell target ${className}target-${idx}`} onClick={onClick}>
+        <div className={className} onClick={onClick}>
             <div className="cell-content">{target}</div>
         </div>
     );

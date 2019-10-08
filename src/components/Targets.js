@@ -1,30 +1,14 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
+import TargetCell from "./TargetCell";
 
 const Targets = ({ setCurrent, targets }) => {
     const [activeTarget, setActiveTarget] = useState(null);
 
-    const handleTargetClick = (idx, value) => {
+    const handleTargetClick = idx => {
         const newValue = activeTarget === idx ? null : idx;
         setActiveTarget(newValue);
-        setCurrent({ idx, value });
-    };
-
-    const renderTargetCell = (value, idx) => {
-        const key = `target-${idx}`;
-        const combinedClassNames = classNames("cell", "target", key, {
-            selected: activeTarget === idx
-        });
-        return (
-            <div
-                key={key}
-                className={combinedClassNames}
-                onClick={() => handleTargetClick(idx, value)}
-            >
-                <div className="cell-content">{value}</div>
-            </div>
-        );
+        setCurrent({ idx, value: targets[idx] });
     };
 
     useEffect(
@@ -37,7 +21,15 @@ const Targets = ({ setCurrent, targets }) => {
     return (
         <div className="row justify-content-md-center no-gutters">
             <div id="targets" className="col-md-auto" style={{ width: "150px" }}>
-                {targets.map((target, idx) => renderTargetCell(target, idx))}
+                {targets.map((target, idx) => (
+                    <TargetCell
+                        idx={idx}
+                        key={`target-${idx}`}
+                        onClick={() => handleTargetClick(idx)}
+                        selected={activeTarget === idx}
+                        target={target}
+                    />
+                ))}
             </div>
         </div>
     );
