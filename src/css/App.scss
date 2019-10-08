@@ -1,103 +1,116 @@
 body {
-  background-color: ivory;
-  color: #453411;
+    background-color: ivory;
+    color: #453411;
 }
 
 header {
-  color: #1a4731;
+    color: #1a4731;
 }
 
 #board {
-  border: 2px solid #453411;
+    border: 2px solid #453411;
 }
 
 #targets {
-  border: 2px solid #453411;
-  width: 100%;
-  @media (min-width: 576px) {
-    width: 150px;
-  }
+    border: 2px solid #453411;
+    width: 100%;
+    @media (min-width: 576px) {
+        width: 150px;
+    }
 }
 
 .cell {
-  padding: 10px;
-  background-color: ivory;
-  border: 1px solid #563d7c33;
-  cursor: pointer;
+    padding: 10px;
+    background-color: ivory;
+    border: 1px solid #563d7c33;
+    cursor: pointer;
 }
 
 .cell-content {
-  text-align: center;
+    text-align: center;
 }
 
 .target.selected {
-  font-style: italic;
-  font-weight: bold;
-  padding: 3px;
-  border-width: 8px;
-  border-style: solid;
+    font-style: italic;
+    font-weight: bold;
+    padding: 3px;
+    border-width: 8px;
+    border-style: solid;
 }
 
 .target-0.selected {
-  border-color: #de751f;
+    border-color: #de751f;
 }
 
 .target-1.selected {
-  border-color: #f2d024;
+    border-color: #f2d024;
 }
 
 .target-2.selected {
-  border-color: #1f9d55;
+    border-color: #1f9d55;
 }
 
 .target-0 {
-  color: #613b1f;
-  background-color: #f6993f;
+    color: #613b1f;
+    background-color: #f6993f;
 }
 
 .target-1 {
-  color: #684f1d;
-  background-color: #ffed4a;
+    color: #684f1d;
+    background-color: #ffed4a;
 }
 
 .target-2 {
-  color: #1a4731;
-  background-color: #38c172;
+    color: #1a4731;
+    background-color: #38c172;
 }
 
-#verify, #reset {
-  padding-top: 10px;
+#verify,
+#reset {
+    padding-top: 10px;
 }
 
 #verify button,
 #reset button {
-  width: 100%;
-  border: #2779bd solid 3px;
-  border-radius: 0;
-  @media (min-width: 540px) {
-    width: 150px;
-  }
+    width: 100%;
+    border: #2779bd solid 3px;
+    border-radius: 0;
+    @media (min-width: 540px) {
+        width: 150px;
+    }
+}
+
+#verify button.selected {
+    background-color: #f56565;
+    color: #9b2c2c;
+    border-color: #9b2c2c;
+}
+
+#verify button.selected:hover {
+    background-color: #9b2c2c;
+    color: ivory;
+    border-color: #9b2c2c;
 }
 
 #verify button:hover,
 #reset button:hover {
-  background-color: #2779bd;
-  border: #1c3d5a solid 3px;
-  color: ivory;
+    background-color: #2779bd;
+    border: #1c3d5a solid 3px;
+    color: ivory;
 }
 
 .error {
-  border: #e3342f solid 4px;
-  color: #cc1f1a;
-  padding: 7px;
+    border: #e3342f solid 4px;
+    color: #cc1f1a;
+    padding: 7px;
 }
 
 .fade-appear {
-  opacity: 0;
-  z-index: 1;
+    opacity: 0;
+    z-index: 1;
 }
 
 .fade-appear.fade-appear-active {
-  opacity: 1;
-  transition: opacity 1000ms linear;
+    opacity: 1;
+    transition: opacity 1000ms linear;
 }

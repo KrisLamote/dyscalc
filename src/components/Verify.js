@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 const Verify = ({ showErrors, toggle }) => {
-    const label = showErrors ? "HIDE" : "SHOW";
+    const label = showErrors ? "ON" : "OFF";
     const classes = classNames("btn btn-sm btn-outline-primary", {
         selected: showErrors
     });
@@ -11,7 +11,10 @@ const Verify = ({ showErrors, toggle }) => {
     return (
         <div className="row justify-content-md-center no-gutters">
             <div id="verify" className="col-md-auto">
-                <button onClick={toggle} className={classes}>{`${label} ERRORS`}</button>
+                <button
+                    onClick={toggle}
+                    className={classes}
+                >{`VERIFICATION ${label}`}</button>
             </div>
         </div>
     );
