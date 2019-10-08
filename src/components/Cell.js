@@ -9,26 +9,24 @@ const empty = {
     value: null
 };
 
-const Cell = ({ current, targets }) => {
+const Cell = ({ current, showErrors, targets }) => {
     const [target, setTarget] = useState(pickOne(targets));
     const [term, setTerm] = useState(pickOne(range(1, target - 1)));
     const [selected, setSelected] = useState(empty);
     const classes = classNames("col-md-3 cell", {
-        [`target-${selected.idx}`]: selected.idx !== null
+        [`target-${selected.idx}`]: selected.idx !== null,
+        error: showErrors && target !== selected.value
     });
 
     const handleClick = selection => {
         setSelected(selection.idx === selected.idx ? empty : selection);
     };
 
-    useEffect(
-        () => {
-            setTarget(pickOne(targets));
-            setTerm(pickOne(range(1, target - 1)));
-            setSelected({ idx: null, value: null });
-        },
-        [targets, target]
-    );
+    useEffect(() => {
+        setTarget(pickOne(targets));
+        setTerm(pickOne(range(1, target - 1)));
+        setSelected({ idx: null, value: null });
+    }, [targets, target]);
 
     return (
         <CSSTransition in={true} appear={true} timeout={1000} classNames="fade">
@@ -39,8 +37,13 @@ const Cell = ({ current, targets }) => {
     );
 };
 
+Cell.defaultPropTypes = {
+    showErrors: false
+};
+
 Cell.propTypes = {
     current: PropTypes.object,
+    showErrors: PropTypes.bool,
     targets: PropTypes.array.isRequired
 };
 
