@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import TargetCell from './TargetCell';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
 const Targets = ({ setCurrent, targets }) => {
     const [activeTarget, setActiveTarget] = useState(null);
@@ -14,7 +13,7 @@ const Targets = ({ setCurrent, targets }) => {
 
     const renderTargetCell = (target, idx) => {
         const key = `target-${idx}`;
-        const combinedClassNames = classNames('cell', 'target', key, {
+        const combinedClassNames = classNames("cell", "target", key, {
             selected: activeTarget === idx
         });
         return (
@@ -30,7 +29,7 @@ const Targets = ({ setCurrent, targets }) => {
 
     return (
         <div className="row justify-content-md-center no-gutters">
-            <div id="targets" className="col-md-auto" style={{ width: '150px' }}>
+            <div id="targets" className="col-md-auto" style={{ width: "150px" }}>
                 {targets.map((target, idx) => renderTargetCell(target, idx))}
             </div>
         </div>
