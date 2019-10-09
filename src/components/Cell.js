@@ -13,7 +13,7 @@ const Cell = ({ current, showErrors, targets }) => {
     const [target, setTarget] = useState(pickOne(targets));
     const [term, setTerm] = useState(pickOne(range(1, target - 1)));
     const [selected, setSelected] = useState(empty);
-    const classes = classNames("col-md-3 cell", {
+    const classes = classNames("app-row__cell cell", {
         [`target-${selected.idx}`]: selected.idx !== null,
         error: showErrors && selected.idx !== null && target !== selected.value
     });

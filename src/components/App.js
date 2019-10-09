@@ -17,26 +17,26 @@ const App = () => {
     }, [targets]);
 
     return (
-        <div className="container">
-            <Header />
-            <div className="row">
-                <div className="col-8">
-                    <Board current={current} showErrors={showErrors} targets={targets} />
-                </div>
-                <div className="col-4">
-                    <Targets targets={targets} setCurrent={setCurrent} />
-                    <Verify
-                        showErrors={showErrors}
-                        toggle={() => setShowErrors(!showErrors)}
-                    />
-                </div>
+      <div className="container app">
+        <Header className="app__header"/>
+        <div className="app__body">
+          <div className="app__body__board">
+            <Board  current={current} showErrors={showErrors} targets={targets} />
+          </div>
+          <div className="app__body__controls">
+            <div className="app__body__controls__targets">
+              <Targets targets={targets} setCurrent={setCurrent} />
             </div>
-            <div className="row">
-                <div className="offset-8 col-4">
-                    <Reset onClick={() => setTargets(generateTargets())} />
-                </div>
+            <div className="app__body__controls__actions">
+              <Verify
+                showErrors={showErrors}
+                toggle={() => setShowErrors(!showErrors)}
+              />
+              <Reset onClick={() => setTargets(generateTargets())} />
             </div>
+          </div>
         </div>
+      </div>
     );
 };
 
