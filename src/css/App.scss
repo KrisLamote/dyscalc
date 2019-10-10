@@ -169,3 +169,31 @@ header {
 
 
 @import './row';
+
+.fadein {
+  -webkit-animation: fadein 1s linear forwards;
+  animation: fadein 1s linear forwards; 
+  opacity: 0;
+}
+
+@-webkit-keyframes fadein {
+  100% { opacity: 1; }
+}
+
+@keyframes fadein {
+  100% { opacity: 1; }
+}
+
+.fadeout {
+  -webkit-animation: fadeout 1s linear forwards;
+  animation: fadeout 1s linear forwards; 
+  opacity: 1;
+}
+
+@-webkit-keyframes fadeout {
+  100% { opacity: 0; }
+}
+
+@keyframes fadeout {
+  100% { opacity: 0; }
+}
