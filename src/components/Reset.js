@@ -15,7 +15,7 @@ const Reset = ({ onClick }) => {
         if (disabled) return;
         onClick();
         setDisabled(true);
-    }, [disabled]);
+    }, [disabled, onClick]);
 
     return (
         <div className="row justify-content-md-center no-gutters">
