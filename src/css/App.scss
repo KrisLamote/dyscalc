@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
 body {
     background-color: ivory;
     color: #453411;
@@ -5,6 +12,50 @@ body {
 
 header {
     color: #1a4731;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  &__body {
+    display: flex;
+    flex-direction: row;
+    &__board {
+      flex: 1;
+      margin-right: 20px;
+      padding-bottom: 20px;
+    }
+    &__controls {
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      flex-direction: column;
+      &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 768px) {
+  .app {
+    &__body {
+      flex-direction: column-reverse;
+      &__board {
+        margin-right: 0;
+      }
+      &__controls {
+        flex-direction: row;
+        margin-bottom: 20px;
+        &__actions {
+          margin-left: 14px;
+        }
+      }
+    }
+  }
 }
 
 #board {
@@ -75,8 +126,9 @@ header {
     width: 100%;
     border: #2779bd solid 3px;
     border-radius: 0;
-    @media (min-width: 540px) {
-        width: 150px;
+    width: 146px;
+    @media screen and (max-width: 576px) {
+      width: 130px;
     }
 }
 
@@ -114,3 +166,6 @@ header {
     opacity: 1;
     transition: opacity 1000ms linear;
 }
+
+
+@import './row';

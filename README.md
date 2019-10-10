@@ -21,6 +21,8 @@ React app to allow children with dyscalculia to practice sums up to 10 or 20
 
 ## How to contribute
 
+0. star this project ;)
+
 1. If you'd like to contribute, go through the issues - and *first* ask to be assigned to a specific issue. Obviously you can report bugs or make suggestions for new features.
 
 2. Fork the repository (top right hand corner)

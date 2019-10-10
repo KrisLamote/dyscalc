@@ -14,9 +14,9 @@ const Cell = ({ current, showErrors, targets }) => {
     const [term, setTerm] = useState(pickOne(range(1, target - 1)));
     const [selected, setSelected] = useState(empty);
     const [isTransitioning, setIsTransitioning] = useState(targets ? true : false);
-    const classes = classNames("col-md-3 cell", {
+    const classes = classNames("app-row__cell cell", {
         [`target-${selected.idx}`]: selected.idx !== null,
-        error: showErrors && target !== selected.value
+        error: showErrors && selected.idx !== null && target !== selected.value
     });
 
     const handleClick = selection => {
