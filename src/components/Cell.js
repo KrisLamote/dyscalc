@@ -13,6 +13,7 @@ const Cell = ({ current, showErrors, targets }) => {
     const [target, setTarget] = useState(pickOne(targets));
     const [term, setTerm] = useState(pickOne(range(1, target - 1)));
     const [selected, setSelected] = useState(empty);
+    const [isTransitioning, setIsTransitioning] = useState(targets ? true : false);
     const classes = classNames("app-row__cell cell", {
         [`target-${selected.idx}`]: selected.idx !== null,
         error: showErrors && selected.idx !== null && target !== selected.value
@@ -26,10 +27,13 @@ const Cell = ({ current, showErrors, targets }) => {
         setTarget(pickOne(targets));
         setTerm(pickOne(range(1, target - 1)));
         setSelected({ idx: null, value: null });
+        setIsTransitioning(targets ? true : false);
     }, [targets, target]);
 
     return (
-        <CSSTransition in={true} appear={true} timeout={1000} classNames="fade">
+        <CSSTransition in={isTransitioning} appear={true} timeout={1000} classNames="fade" onEntered={(node, isAppearing) => {
+            setIsTransitioning(false);
+        }}>
             <div className={classes} onClick={() => handleClick(current)}>
                 <div className="cell-content">{`${term} + ${target - term}`}</div>
             </div>
