@@ -162,12 +162,12 @@ button:hover#back-to-game {
     padding: 7px;
 }
 
-.fade-appear {
+.fade-appear, .fade-enter {
     opacity: 0;
     z-index: 1;
 }
 
-.fade-appear.fade-appear-active {
+.fade-appear.fade-appear-active, .fade-enter.fade-enter-active {
     opacity: 1;
     transition: opacity 1000ms linear;
 }

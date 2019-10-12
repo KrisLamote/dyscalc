@@ -1,6 +1,7 @@
 # dyscalc
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5b0d37c-de93-411c-be38-29c391a921d4/deploy-status)](https://app.netlify.com/sites/dyscalc/deploys)
+[![Build Status](https://travis-ci.org/KrisLamote/dyscalc.svg?branch=master)](https://travis-ci.org/KrisLamote/dyscalc)
 
 React app to allow children with dyscalculia to practice sums up to 10 or 20
 
@@ -20,6 +21,8 @@ React app to allow children with dyscalculia to practice sums up to 10 or 20
 
 
 ## How to contribute
+
+0. star this project ;)
 
 1. If you'd like to contribute, go through the issues - and *first* ask to be assigned to a specific issue. Obviously you can report bugs or make suggestions for new features.
 
