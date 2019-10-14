@@ -117,12 +117,15 @@ header {
 }
 
 #verify,
-#reset {
+#reset,
+#options {
     padding-top: 10px;
 }
 
 #verify button,
-#reset button {
+#reset button,
+#options button,
+button#back-to-game {
     width: 100%;
     border: #2779bd solid 3px;
     border-radius: 0;
@@ -145,10 +148,12 @@ header {
 }
 
 #verify button:hover,
-#reset button:hover {
-    background-color: #2779bd;
-    border: #1c3d5a solid 3px;
-    color: ivory;
+#reset button:hover,
+#options button:hover,
+button:hover#back-to-game {
+  background-color: #2779bd;
+  border: #1c3d5a solid 3px;
+  color: ivory;
 }
 
 .error {
@@ -165,6 +170,57 @@ header {
 .fade-appear.fade-appear-active, .fade-enter.fade-enter-active {
     opacity: 1;
     transition: opacity 1000ms linear;
+}
+
+.backdrop {
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.options-container {
+    position: fixed;
+    z-index: 200;
+    background-color: white;
+    width: 70%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 35px;
+    left: 15%;
+    top: 25%;
+    box-sizing: border-box;
+
+  div {
+      padding: 12px;
+  }
+  
+  .options {
+      border: #2779bd solid 1px;
+      padding: 5px 20px;
+  }
+
+  .option-label {
+      margin-right: 20px;
+  }
+
+  .active-option {
+      background-color: #2779bd;
+      color: ivory;
+  }
+
+  #back-to-game {
+      margin-top: 30px;
+  }
+
+  button.selected#back-to-game {
+      background-color: #2779bd;
+      border: #1c3d5a solid 3px;
+      color: ivory;
+  }
 }
 
 

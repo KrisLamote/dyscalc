@@ -4,6 +4,8 @@ import Board from "./Board";
 import Targets from "./Targets";
 import Verify from "./Verify";
 import Reset from "./Reset";
+import Options from "./Options";
+import OptionsContainer from './OptionsContainer';
 import { pickSome, range } from "../helpers";
 
 const App = () => {
@@ -11,6 +13,7 @@ const App = () => {
     const [targets, setTargets] = useState(generateTargets());
     const [current, setCurrent] = useState({ idx: null, value: null });
     const [showErrors, setShowErrors] = useState(false);
+    const [showOptions, setShowOptions] = useState(false);
 
     useEffect(() => {
         setShowErrors(false);
@@ -22,6 +25,10 @@ const App = () => {
             <div className="app__body">
                 <div className="app__body__board">
                     <Board current={current} showErrors={showErrors} targets={targets} />
+                    <OptionsContainer 
+                        showOptions={showOptions}
+                        backToGame={() => setShowOptions(!showOptions)}
+                    />
                 </div>
                 <div className="app__body__controls">
                     <div className="app__body__controls__targets">
@@ -33,6 +40,7 @@ const App = () => {
                             toggle={() => setShowErrors(!showErrors)}
                         />
                         <Reset onClick={() => setTargets(generateTargets())} />
+                        <Options onClick={() => setShowOptions(!showOptions)} />
                     </div>
                 </div>
             </div>
