@@ -187,12 +187,20 @@ button:hover#back-to-game {
     z-index: 200;
     background-color: white;
     width: 70%;
+    height: fit-content;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
     padding: 35px;
-    left: 15%;
-    top: 25%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     box-sizing: border-box;
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      left: 0;
+    }
 
   div {
       padding: 12px;
@@ -205,6 +213,9 @@ button:hover#back-to-game {
 
   .option-label {
       margin-right: 20px;
+      @media screen and (max-width: 576px) {
+        display: block;
+      }
   }
 
   .active-option {
