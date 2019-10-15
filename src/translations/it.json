@@ -1,4 +1,4 @@
 {
-    "RESET": "RESETTARE",
-    "VERIFICATION": "VERIFICA {label}"
+    "menu.reset": "RESETTARE",
+    "menu.verify": "VERIFICA {label}"
 }
