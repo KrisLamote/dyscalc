@@ -9,7 +9,7 @@ const empty = {
     value: null
 };
 
-const Cell = ({ current, showErrors, targets }) => {
+const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     const [target, setTarget] = useState(pickOne(targets));
     const [term, setTerm] = useState(pickOne(range(1, target - 1)));
     const [selected, setSelected] = useState(empty);
@@ -20,7 +20,14 @@ const Cell = ({ current, showErrors, targets }) => {
     });
 
     const handleClick = selection => {
-        setSelected(selection.idx === selected.idx ? empty : selection);
+        const newVal = selection.idx === selected.idx ? empty : selection;
+        if (selected.value !== target && newVal.value === target) {
+            onCorrect();
+        } else if (selected.value === target && newVal.value !== target) {
+            onIncorrect();
+        }
+
+        setSelected(newVal);
     };
 
     useEffect(() => {
@@ -48,7 +55,9 @@ Cell.defaultPropTypes = {
 Cell.propTypes = {
     current: PropTypes.object,
     showErrors: PropTypes.bool,
-    targets: PropTypes.array.isRequired
+    targets: PropTypes.array.isRequired,
+    onCorrect: PropTypes.func.isRequired, 
+    onIncorrect: PropTypes.func.isRequired,
 };
 
 export default Cell;

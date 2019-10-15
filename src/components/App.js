@@ -6,6 +6,7 @@ import Verify from "./Verify";
 import Reset from "./Reset";
 import Options from "./Options";
 import OptionsContainer from './OptionsContainer';
+import GameState from './GameState';
 import { pickSome, range } from "../helpers";
 
 const App = () => {
@@ -22,28 +23,35 @@ const App = () => {
     return (
         <div className="container app">
             <Header className="app__header" />
-            <div className="app__body">
-                <div className="app__body__board">
-                    <Board current={current} showErrors={showErrors} targets={targets} />
-                    <OptionsContainer 
-                        showOptions={showOptions}
-                        backToGame={() => setShowOptions(!showOptions)}
-                    />
-                </div>
-                <div className="app__body__controls">
-                    <div className="app__body__controls__targets">
-                        <Targets targets={targets} setCurrent={setCurrent} />
+            <GameState total={16}>
+                {({ onCorrect, onIncorrect, onReset }) => (
+                    <div className="app__body">
+                        <div className="app__body__board">
+                            <Board current={current} showErrors={showErrors} targets={targets} onCorrect={onCorrect} onIncorrect={onIncorrect} />
+                            <OptionsContainer 
+                                showOptions={showOptions}
+                                backToGame={() => setShowOptions(!showOptions)}
+                            />
+                        </div>
+                        <div className="app__body__controls">
+                            <div className="app__body__controls__targets">
+                                <Targets targets={targets} setCurrent={setCurrent} />
+                            </div>
+                            <div className="app__body__controls__actions">
+                                <Verify
+                                    showErrors={showErrors}
+                                    toggle={() => setShowErrors(!showErrors)}
+                                />
+                                <Reset onClick={() => {
+                                    onReset();
+                                    setTargets(generateTargets());
+                                }} />
+                                <Options onClick={() => setShowOptions(!showOptions)} />
+                            </div>
+                        </div>
                     </div>
-                    <div className="app__body__controls__actions">
-                        <Verify
-                            showErrors={showErrors}
-                            toggle={() => setShowErrors(!showErrors)}
-                        />
-                        <Reset onClick={() => setTargets(generateTargets())} />
-                        <Options onClick={() => setShowOptions(!showOptions)} />
-                    </div>
-                </div>
-            </div>
+                )}
+            </GameState>
         </div>
     );
 };
