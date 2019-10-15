@@ -1,4 +1,5 @@
 {
   "RESET": "СБРОСИТЬ",
-  "VERIFICATION": "ПРОВЕРКА {label}"
+  "VERIFICATION": "ПРОВЕРКА {label}",
+  "OPTIONS": "НАСТРОЙКИ"
 }
