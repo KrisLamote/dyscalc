@@ -1,4 +1,5 @@
 {
     "RESET": "RESET",
-    "VERIFICATION": "VERIFICATION {label}"
+    "VERIFICATION": "VERIFICATION {label}",
+    "OPTIONS": "OPTIONS"
 }
