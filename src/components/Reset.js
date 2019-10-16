@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from "react-intl";
+import messages from "../translations/defaults";
 
 const Reset = ({ onClick }) => {
     const [disabled, setDisabled] = useState(false);
@@ -21,8 +22,12 @@ const Reset = ({ onClick }) => {
     return (
         <div className="row justify-content-md-center no-gutters">
             <div id="reset" className="col-md-auto">
-                <button onClick={handleClick} className="btn btn-sm btn-outline-primary" disabled={disabled}>
-                    <FormattedMessage id={'RESET'} />
+                <button
+                    onClick={handleClick}
+                    className="btn btn-sm btn-outline-primary"
+                    disabled={disabled}
+                >
+                    <FormattedMessage {...messages.reset} />
                 </button>
             </div>
         </div>
