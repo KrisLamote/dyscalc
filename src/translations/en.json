@@ -1,0 +1,5 @@
+{
+    "menu.options.button": "OPTIONS",
+    "menu.reset": "RESET",
+    "menu.verify": "VERIFICATION {label}"
+}

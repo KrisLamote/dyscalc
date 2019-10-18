@@ -1,19 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Cell from './Cell';
+import React from "react";
+import PropTypes from "prop-types";
+import Cell from "./Cell";
 
-const Row = ({ targets }) => {
+const Row = ({ current, showErrors, targets, ...rest }) => {
     return (
-        <div className="row">
-            <Cell targets={targets} />
-            <Cell targets={targets} />
-            <Cell targets={targets} />
-            <Cell targets={targets} />
+        <div className="app-row row no-gutters">
+            <Cell className="app-row__cell" current={current} showErrors={showErrors} targets={targets} {...rest} />
+            <Cell className="app-row__cell" current={current} showErrors={showErrors} targets={targets} {...rest} />
+            <Cell className="app-row__cell" current={current} showErrors={showErrors} targets={targets} {...rest} />
+            <Cell className="app-row__cell" current={current} showErrors={showErrors} targets={targets} {...rest} />
         </div>
     );
 };
 
+Row.defaultPropTypes = {
+    showErrors: false
+};
+
 Row.propTypes = {
+    current: PropTypes.object,
+    showErrors: PropTypes.bool,
     targets: PropTypes.array.isRequired
 };
 

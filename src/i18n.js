@@ -1,0 +1,23 @@
+import en from "./translations/en";
+import it from "./translations/it";
+import ro from "./translations/ro";
+import ru from "./translations/ru";
+import ptBR from "./translations/pt-br";
+import ka from "./translations/ka";
+import tr from "./translations/tr";
+
+const language = navigator.language.split(/[-_]/)[0];
+
+export const appLocales = ["en", "it", "ro", "ru", "pt-BR", "ka", "tr"];
+
+export const messages = {
+    en,
+    it,
+    ro,
+    ru,
+    ptBR,
+    ka,
+    tr
+};
+
+export default language;
