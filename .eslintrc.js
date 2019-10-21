@@ -18,8 +18,12 @@ module.exports = {
     },
     plugins: ["react"],
     rules: {
+        "comma-dangle": 0,
+        "arrow-body-style": ["off"],
+        "arrow-parens": ["error", "as-needed"],
         indent: ["error", 4],
         "object-curly-newline": ["error", { consistent: true }],
+        quotes: ["error", "double", { avoidEscape: true }],
         "react/forbid-prop-types": ["error", { forbid: ["any"] }],
         "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
         "react/jsx-indent": ["error", 4],
@@ -30,7 +34,5 @@ module.exports = {
                 custom: "ignore",
             },
         ],
-        quotes: ["error", "double", { avoidEscape: true }],
-        "comma-dangle": 0,
     },
 };
