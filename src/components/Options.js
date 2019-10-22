@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { FormattedMessage } from "react-intl";
 import messages from "../translations/defaults";
 
@@ -12,6 +13,10 @@ const Options = ({ onClick }) => {
             </div>
         </div>
     );
+};
+
+Options.propTypes = {
+    onClick: PropTypes.func.isRequired,
 };
 
 export default Options;
