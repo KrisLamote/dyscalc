@@ -5,8 +5,8 @@ import Targets from "./Targets";
 import Verify from "./Verify";
 import Reset from "./Reset";
 import Options from "./Options";
-import OptionsContainer from './OptionsContainer';
-import GameState from './GameState';
+import OptionsContainer from "./OptionsContainer";
+import GameState from "./GameState";
 import { pickSome, range } from "../helpers";
 
 const App = () => {
@@ -27,8 +27,14 @@ const App = () => {
                 {({ onCorrect, onIncorrect, onReset }) => (
                     <div className="app__body">
                         <div className="app__body__board">
-                            <Board current={current} showErrors={showErrors} targets={targets} onCorrect={onCorrect} onIncorrect={onIncorrect} />
-                            <OptionsContainer 
+                            <Board
+                                current={current}
+                                showErrors={showErrors}
+                                targets={targets}
+                                onCorrect={onCorrect}
+                                onIncorrect={onIncorrect}
+                            />
+                            <OptionsContainer
                                 showOptions={showOptions}
                                 backToGame={() => setShowOptions(!showOptions)}
                             />
@@ -42,10 +48,12 @@ const App = () => {
                                     showErrors={showErrors}
                                     toggle={() => setShowErrors(!showErrors)}
                                 />
-                                <Reset onClick={() => {
-                                    onReset();
-                                    setTargets(generateTargets());
-                                }} />
+                                <Reset
+                                    onClick={() => {
+                                        onReset();
+                                        setTargets(generateTargets());
+                                    }}
+                                />
                                 <Options onClick={() => setShowOptions(!showOptions)} />
                             </div>
                         </div>

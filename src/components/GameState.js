@@ -19,7 +19,7 @@ const GameState = ({ total, children }) => {
 
 GameState.propTypes = {
     total: PropTypes.number.isRequired,
-    children: PropTypes.func.isRequired
+    children: PropTypes.func.isRequired,
 };
 
 export default GameState;

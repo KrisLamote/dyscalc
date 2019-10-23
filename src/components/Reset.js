@@ -23,9 +23,10 @@ const Reset = ({ onClick }) => {
         <div className="row justify-content-md-center no-gutters">
             <div id="reset" className="col-md-auto">
                 <button
-                    onClick={handleClick}
                     className="btn btn-sm btn-outline-primary"
                     disabled={disabled}
+                    onClick={handleClick}
+                    type="button"
                 >
                     <FormattedMessage {...messages.reset} />
                 </button>
@@ -35,7 +36,7 @@ const Reset = ({ onClick }) => {
 };
 
 Reset.propTypes = {
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
 };
 
 export default Reset;

@@ -11,18 +11,6 @@ import ta from "./translations/ta";
 const language = navigator.language.split(/[-_]/)[0];
 
 export const appLocales = ["en", "it", "ro", "ru", "pt-BR", "ka", "tr", "ur", "ta"];
-
-
-export const messages = {
-    en,
-    it,
-    ro,
-    ru,
-    ptBR,
-    ka,
-    tr,
-    ta,
-    ur
-};
+export const messages = { en, it, ka, ptBR, ro, ru, ta, tr, ur };
 
 export default language;
