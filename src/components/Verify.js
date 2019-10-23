@@ -21,12 +21,12 @@ const Verify = ({ showErrors, toggle }) => {
     );
 };
 
-Verify.defaultPropTypes = {
+Verify.defaultProps = {
     showErrors: false,
 };
 
 Verify.propTypes = {
-    toggle: PropTypes.func,
+    toggle: PropTypes.func.isRequired,
     showErrors: PropTypes.bool,
 };
 

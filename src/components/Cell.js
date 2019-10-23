@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/interactive-supports-focus */
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
@@ -40,14 +42,16 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     return (
         <CSSTransition
             in={isTransitioning}
+            // eslint-disable-next-line react/jsx-boolean-value
             appear={true}
             timeout={1000}
             classNames="fade"
-            onEntered={(node, isAppearing) => {
+            onEntered={() => {
                 setIsTransitioning(false);
             }}
         >
-            <div className={classes} onClick={() => handleClick(current)}>
+            {/* see eslint exceptions, this really should be a button */}
+            <div className={classes} onClick={() => handleClick(current)} role="button">
                 <div className="cell-content">{`${term} + ${target - term}`}</div>
             </div>
         </CSSTransition>
