@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import OptionToggle from "./OptionToggle";
 import { OPERATIONS, ACTION_TYPE } from "../enums";
 
@@ -9,8 +10,8 @@ const OptionsContainer = ({ showOptions, backToGame, optionState, optionDispatch
         operation: [OPERATIONS.SUM, OPERATIONS.SUBTRACT, OPERATIONS.BOTH],
     };
 
-    const handleClick = (option, value) => {
-        value = option === "operation" ? value : Number(value);
+    const handleClick = (option, input) => {
+        const value = option === "operation" ? input : Number(input);
         let actionType;
 
         if (option === "operation") actionType = ACTION_TYPE.CHANGE_OPERATION;
@@ -39,12 +40,17 @@ const OptionsContainer = ({ showOptions, backToGame, optionState, optionDispatch
         <>
             {showOptions && (
                 <>
-                    <div className="backdrop" onClick={backToGame} />
-
+                    {/**
+                     * adding role="presentation" is only patch for js lint errors:
+                     * - jsx-a11y/click-events-have-key-events
+                     * - jsx-a11y/no-static-element-interactions
+                     * this really should have a keyDownHandler for ESC
+                     */}
+                    <div className="backdrop" onClick={backToGame} role="presentation" />
                     <div className="options-container">
                         <h4>Select your Preferred Options</h4>
                         {toggle}
-                        <button onClick={backToGame} id="back-to-game">
+                        <button onClick={backToGame} id="back-to-game" type="button">
                             Back to Game
                         </button>
                     </div>
@@ -52,6 +58,15 @@ const OptionsContainer = ({ showOptions, backToGame, optionState, optionDispatch
             )}
         </>
     );
+};
+
+OptionsContainer.defaultProps = {
+    showOptions: false,
+};
+
+OptionsContainer.propTypes = {
+    backToGame: PropTypes.func.isRequired,
+    showOptions: PropTypes.bool,
 };
 
 export default OptionsContainer;

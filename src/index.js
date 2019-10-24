@@ -2,8 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import "./css/bootstrap.min.css";
 import "./css/App.scss";
-import language, { messages } from "./i18n";
 import { IntlProvider } from "react-intl";
+import language, { messages } from "./i18n";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
