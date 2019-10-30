@@ -32,6 +32,11 @@ function optionReducer(state, action) {
                 ...state,
                 options,
             };
+        case ACTION_TYPE.CHANGE_SCORE:
+            return {
+                ...state,
+                score: action.payload.data,
+            };
         default:
             throw new Error("No action type matched");
     }
@@ -50,7 +55,13 @@ const App = () => {
 
     useEffect(() => {
         setTargets(generateTargets());
-    }, [generateTargets]);
+        dispatch({
+            type: ACTION_TYPE.CHANGE_SCORE,
+            payload: {
+                data: 16,
+            },
+        });
+    }, [generateTargets, options]);
 
     useEffect(() => {
         setShowErrors(false);
