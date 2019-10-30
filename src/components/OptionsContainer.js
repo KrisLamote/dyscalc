@@ -1,25 +1,32 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import OptionToggle from "./OptionToggle";
+import GameContext from "./GameContext";
+import { OPERATIONS, ACTION_TYPE } from "../enums";
 
-const OptionsContainer = ({ backToGame, showOptions }) => {
-    const options = {
+const OptionsContainer = ({ showOptions, backToGame }) => {
+    const allOptions = {
         upto: [10, 20],
-        targets: [3, 4, 5],
-        operation: ["sum", "subtraction", "both"],
+        target: [3, 4, 5],
+        operation: [OPERATIONS.SUM, OPERATIONS.SUBTRACT, OPERATIONS.BOTH],
     };
 
-    const [selectedOptions, updateSelectedOptions] = useState({
-        upto: options.upto[0],
-        operation: options.operation[0],
-        targets: options.targets[0],
-    });
+    const { state, dispatch } = useContext(GameContext);
+    const { options } = state;
 
     const handleClick = (option, input) => {
         const value = option === "operation" ? input : Number(input);
-        updateSelectedOptions({
-            ...selectedOptions,
-            [option]: value,
+        let actionType;
+
+        if (option === "operation") actionType = ACTION_TYPE.CHANGE_OPERATION;
+        else if (option === "target") actionType = ACTION_TYPE.CHANGE_TARGET;
+        else if (option === "upto") actionType = ACTION_TYPE.CHANGE_UPTO;
+
+        dispatch({
+            type: actionType,
+            payload: {
+                data: value,
+            },
         });
     };
 
@@ -27,8 +34,8 @@ const OptionsContainer = ({ backToGame, showOptions }) => {
         <OptionToggle
             key={optionKey}
             label={optionKey.toUpperCase()}
-            options={options[optionKey]}
-            currentChoice={selectedOptions[optionKey]}
+            options={allOptions[optionKey]}
+            currentChoice={options[optionKey]}
             handleClick={event => handleClick(optionKey, event.target.innerHTML)}
         />
     ));
