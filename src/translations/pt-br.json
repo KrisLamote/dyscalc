@@ -1,5 +1,6 @@
 {
-  "RESET": "REINICIAR",
-  "VERIFICATION": "VERIFICAR {label}",
-  "OPTIONS": "OPÇÕES"
+    "menu.options.button": "OPÇÕES",
+    "menu.reset": "REINICIAR",
+    "menu.verify.on": "VERIFICAR ON",
+    "menu.verify.off": "VERIFICAR OFF"
 }

@@ -1,5 +1,6 @@
 {
-  "menu.options.button": "விருப்பங்கள்",
-  "menu.reset": "மீட்டமை",
-  "menu.verify": "சரிபார்ப்பு {label}"
+    "menu.options.button": "விருப்பங்கள்",
+    "menu.reset": "மீட்டமை",
+    "menu.verify.on": "சரிபார்ப்பு ON",
+    "menu.verify.off": "சரிபார்ப்பு OFF"
 }

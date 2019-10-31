@@ -1,5 +1,6 @@
 {
     "menu.options.button": "SEÇENEKLER",
     "menu.reset": "RESET",
-    "menu.verify": "DOĞRULAMA {label}"
+    "menu.verify.on": "DOĞRULAMA ON",
+    "menu.verify.off": "DOĞRULAMA OFF"
 }

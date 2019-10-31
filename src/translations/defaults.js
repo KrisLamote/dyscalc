@@ -18,8 +18,14 @@ const defaultMessages = {
         defaultMessage: "RESET",
     },
     verify: {
-        id: "menu.verify",
-        defaultMessage: "VERIFICATION {label}",
+        on: {
+            id: "menu.verify.on",
+            defaultMessage: "VERIFICATION ON",
+        },
+        off: {
+            id: "menu.verify.off",
+            defaultMessage: "VERIFICATION OFF",
+        },
     },
 };
 
