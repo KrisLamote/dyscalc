@@ -1,4 +1,5 @@
 {
     "menu.reset": "RESETTARE",
-    "menu.verify": "VERIFICA {label}"
+    "menu.verify.on": "VERIFICA ON",
+    "menu.verify.off": "VERIFICA OFF"
 }

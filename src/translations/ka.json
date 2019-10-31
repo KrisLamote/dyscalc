@@ -1,5 +1,6 @@
 {
     "menu.options.button": "პარამეტრები",
     "menu.reset": "გადატვირთვა",
-    "menu.verify": "ვერიფიკაცია {label}"
+    "menu.verify.on": "ვერიფიკაცია ON",
+    "menu.verify.off": "ვერიფიკაცია OFF"
 }

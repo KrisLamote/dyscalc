@@ -5,7 +5,6 @@ import { FormattedMessage } from "react-intl";
 import messages from "../translations/defaults";
 
 const Verify = ({ showErrors, toggle }) => {
-    const label = showErrors ? "ON" : "OFF";
     const classes = classNames("btn btn-sm btn-outline-primary", {
         selected: showErrors,
     });
@@ -14,7 +13,7 @@ const Verify = ({ showErrors, toggle }) => {
         <div className="row justify-content-md-center no-gutters">
             <div id="verify" className="col-md-auto">
                 <button className={classes} onClick={toggle} type="button">
-                    <FormattedMessage {...messages.verify} values={{ label }} />
+                    <FormattedMessage {...messages.verify[showErrors ? "on" : "off"]} />
                 </button>
             </div>
         </div>
