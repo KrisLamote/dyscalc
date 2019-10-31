@@ -7,10 +7,11 @@ import ru from "./translations/ru";
 import ta from "./translations/ta";
 import tr from "./translations/tr";
 import ur from "./translations/ur";
+import hu from "./translations/hu";
 
 const language = navigator.language.split(/[-_]/)[0];
 
-export const appLocales = ["en", "it", "ka", "pt", "ro", "ru", "ta", "tr", "ur"];
-export const messages = { en, it, ka, pt, ro, ru, ta, tr, ur };
+export const appLocales = ["en", "it", "ka", "pt", "ro", "ru", "ta", "tr", "ur", "hu"];
+export const messages = { en, it, ka, pt, ro, ru, ta, tr, ur, hu };
 
 export default language;
