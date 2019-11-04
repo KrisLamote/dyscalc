@@ -10,7 +10,8 @@ const OptionsToggle = ({ currentChoice, handleClick, label, options }) => (
             const classes = classNames("options", {
                 "active-option": option === currentChoice,
             });
-            const shouldDisableButton = label !== "UPTO" && option !== options[0];
+            const shouldDisableButton = ( label === "TARGET"  && options.indexOf(option) !== 0 ) || 
+                                        ( label === "OPERATION"  && options.indexOf(option) === 2 )
             return (
                 <button
                     key={option}

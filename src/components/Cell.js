@@ -1,19 +1,46 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext, useMemo} from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { CSSTransition } from "react-transition-group";
 import { pickOne, range } from "../helpers";
+import { OPERATIONS } from "../enums";
+import GameContext from "./GameContext";
 
 const empty = {
     idx: null,
     value: null,
 };
 
+const operationFactory = (operation, upto) => { 
+    const operations = {
+        [OPERATIONS.SUM]: [
+            (target)=> pickOne(range(1, target - 1)), 
+            (target, term) => `${term} + ${target - term}`
+        ],
+        [OPERATIONS.SUBTRACT]: [
+            (target)=> pickOne(range(target, target + upto)), 
+            (target, term) => `${term} - ${term - target}`
+        ]
+    }
+
+    const proxy = new Proxy(operations, {
+        get: (operations, operation) => {
+            return operation in operations ?
+            operations[operation] :
+            operations[OPERATIONS.SUM];
+        }
+    });
+
+    return proxy[operation]
+}
+
 const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
+    const { state: {options: {operation, upto}} } = useContext(GameContext);
+    const [termFactory, labelFactory] = useMemo(() => operationFactory(operation, upto), [operation, upto])  
     const [target, setTarget] = useState(pickOne(targets));
-    const [term, setTerm] = useState(pickOne(range(1, target - 1)));
+    const [term, setTerm] = useState(termFactory(target));
     const [selected, setSelected] = useState(empty);
     const [isTransitioning, setIsTransitioning] = useState(Array.isArray(targets));
     const classes = classNames("app-row__cell cell", {
@@ -34,10 +61,11 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
 
     useEffect(() => {
         setTarget(pickOne(targets));
-        setTerm(pickOne(range(1, target - 1)));
+        setTerm(termFactory(target));
         setSelected({ idx: null, value: null });
         setIsTransitioning(Array.isArray(targets));
-    }, [targets, target]);
+    }, [targets, target, termFactory]);
+
 
     return (
         <CSSTransition
@@ -52,7 +80,7 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
         >
             {/* see eslint exceptions, this really should be a button */}
             <div className={classes} onClick={() => handleClick(current)} role="button">
-                <div className="cell-content">{`${term} + ${target - term}`}</div>
+                <div className="cell-content">{labelFactory(target, term)}</div>
             </div>
         </CSSTransition>
     );
