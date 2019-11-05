@@ -39,8 +39,10 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
 
     useEffect(() => {
         // setTerm(pickOne(range(1, target - 1)));
-        setTerm(pickOne(range(target, upto)));
-    }, [target]);
+        if (target <= upto) {
+            setTerm(pickOne(range(target, upto)));
+        }
+    }, [target, upto]);
 
     useEffect(() => {
         setTarget(pickOne(targets));
