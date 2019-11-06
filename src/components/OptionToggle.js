@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import { OPERATIONS } from "../enums";
 
 const OptionsToggle = ({ currentChoice, handleClick, label, options }) => (
     <div>
@@ -10,7 +11,7 @@ const OptionsToggle = ({ currentChoice, handleClick, label, options }) => (
             const classes = classNames("options", {
                 "active-option": option === currentChoice,
             });
-            const shouldDisableButton = label !== "UPTO" && option !== options[0];
+            const shouldDisableButton = label === "TARGET" || option === OPERATIONS.BOTH;
             return (
                 <button
                     key={option}

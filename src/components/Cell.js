@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { CSSTransition } from "react-transition-group";
 import GameContext from "./GameContext";
 import { pickOne, range } from "../helpers";
+import { OPERATIONS } from "../enums";
 
 const empty = {
     idx: null,
@@ -14,7 +15,7 @@ const empty = {
 
 const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     const { state } = useContext(GameContext);
-    const { upto } = state.options;
+    const { upto, operation } = state.options;
     const [target, setTarget] = useState(null);
     const [term, setTerm] = useState(null);
     const [selected, setSelected] = useState(empty);
@@ -24,8 +25,11 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
         error: showErrors && selected.idx !== null && target !== selected.value,
     });
 
-    // const label = {`${term} + ${target - term}`}
-    const label = `${term} - ${term - target}`;
+    // eslint-disable-next-line operator-linebreak
+    const label =
+        operation === OPERATIONS.SUBTRACT
+            ? `${term} - ${term - target}`
+            : `${term} + ${target - term}`;
 
     const handleClick = selection => {
         const newVal = selection.idx === selected.idx ? empty : selection;
@@ -38,11 +42,15 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     };
 
     useEffect(() => {
-        // setTerm(pickOne(range(1, target - 1)));
-        if (target <= upto) {
-            setTerm(pickOne(range(target, upto)));
+        // maybe usePrevious could solve this
+        if (target && target <= upto) {
+            setTerm(
+                operation === OPERATIONS.SUBTRACT
+                    ? pickOne(range(target, upto))
+                    : pickOne(range(1, target - 1))
+            );
         }
-    }, [target, upto]);
+    }, [target, upto, operation]);
 
     useEffect(() => {
         setTarget(pickOne(targets));
