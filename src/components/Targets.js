@@ -8,7 +8,9 @@ const Targets = ({ setCurrent, targets }) => {
     const handleTargetClick = idx => {
         const newValue = activeTarget === idx ? null : idx;
         setActiveTarget(newValue);
-        setCurrent({ idx, value: targets[idx] });
+        setCurrent(
+            newValue !== null ? { idx, value: targets[idx] } : { idx: null, value: null }
+        );
     };
 
     useEffect(() => {
