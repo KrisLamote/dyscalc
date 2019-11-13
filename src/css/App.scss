@@ -82,58 +82,7 @@ header {
     text-align: center;
 }
 
-.target.selected {
-    font-style: italic;
-    font-weight: bold;
-    padding: 3px;
-    border-width: 8px;
-    border-style: solid;
-}
-
-.target-0.selected {
-    border-color: #de751f;
-}
-
-.target-1.selected {
-    border-color: #f2d024;
-}
-
-.target-2.selected {
-    border-color: #1f9d55;
-}
-
-.target-3.selected {
-    border-color: #4299e1;
-}
-
-.target-4.selected {
-    border-color: #9f7aea;
-}
-
-.target-0 {
-    color: #613b1f;
-    background-color: #f6993f;
-}
-
-.target-1 {
-    color: #684f1d;
-    background-color: #ffed4a;
-}
-
-.target-2 {
-    color: #1a4731;
-    background-color: #38c172;
-}
-
-.target-3 {
-    color: #2b6cb0;
-    background-color: #90cdf4;
-}
-
-.target-4 {
-    color: #6b46c1;
-    background-color: #d6bcfa;
-}
+@import "./_target.scss";
 
 #verify,
 #reset,
@@ -255,4 +204,4 @@ button:hover#back-to-game {
     }
 }
 
-@import "./row";
+@import "./_row.scss";
