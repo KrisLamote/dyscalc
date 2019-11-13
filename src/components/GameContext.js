@@ -3,7 +3,7 @@ import { OPERATIONS } from "../enums";
 
 export const initialOptionState = {
     upto: 10,
-    target: 3,
+    target: 5,
     operation: OPERATIONS.SUM,
 };
 
