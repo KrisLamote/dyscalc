@@ -1,8 +1,9 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -15,47 +16,47 @@ header {
 }
 
 .app {
-  display: flex;
-  flex-direction: column;
-  &__body {
     display: flex;
-    flex-direction: row;
-    &__board {
-      flex: 1;
-      margin-right: 20px;
-      padding-bottom: 20px;
-    }
-    &__controls {
-      display: flex;
-      align-content: center;
-      justify-content: space-between;
-      flex-direction: column;
-      &__actions {
+    flex-direction: column;
+    &__body {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+        flex-direction: row;
+        &__board {
+            flex: 1;
+            margin-right: 20px;
+            padding-bottom: 20px;
+        }
+        &__controls {
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+            flex-direction: column;
+            &__actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     }
-  }
 }
 
 @media all and (max-width: 768px) {
-  .app {
-    &__body {
-      flex-direction: column-reverse;
-      &__board {
-        margin-right: 0;
-      }
-      &__controls {
-        flex-direction: row;
-        margin-bottom: 20px;
-        &__actions {
-          margin-left: 14px;
+    .app {
+        &__body {
+            flex-direction: column-reverse;
+            &__board {
+                margin-right: 0;
+            }
+            &__controls {
+                flex-direction: row;
+                margin-bottom: 20px;
+                &__actions {
+                    margin-left: 14px;
+                }
+            }
         }
-      }
     }
-  }
 }
 
 #board {
@@ -81,40 +82,7 @@ header {
     text-align: center;
 }
 
-.target.selected {
-    font-style: italic;
-    font-weight: bold;
-    padding: 3px;
-    border-width: 8px;
-    border-style: solid;
-}
-
-.target-0.selected {
-    border-color: #de751f;
-}
-
-.target-1.selected {
-    border-color: #f2d024;
-}
-
-.target-2.selected {
-    border-color: #1f9d55;
-}
-
-.target-0 {
-    color: #613b1f;
-    background-color: #f6993f;
-}
-
-.target-1 {
-    color: #684f1d;
-    background-color: #ffed4a;
-}
-
-.target-2 {
-    color: #1a4731;
-    background-color: #38c172;
-}
+@import "./_target.scss";
 
 #verify,
 #reset,
@@ -131,7 +99,7 @@ button#back-to-game {
     border-radius: 0;
     width: 146px;
     @media screen and (max-width: 576px) {
-      width: 130px;
+        width: 130px;
     }
 }
 
@@ -151,9 +119,9 @@ button#back-to-game {
 #reset button:hover,
 #options button:hover,
 button:hover#back-to-game {
-  background-color: #2779bd;
-  border: #1c3d5a solid 3px;
-  color: ivory;
+    background-color: #2779bd;
+    border: #1c3d5a solid 3px;
+    color: ivory;
 }
 
 .error {
@@ -162,12 +130,14 @@ button:hover#back-to-game {
     padding: 7px;
 }
 
-.fade-appear, .fade-enter {
+.fade-appear,
+.fade-enter {
     opacity: 0;
     z-index: 1;
 }
 
-.fade-appear.fade-appear-active, .fade-enter.fade-enter-active {
+.fade-appear.fade-appear-active,
+.fade-enter.fade-enter-active {
     opacity: 1;
     transition: opacity 1000ms linear;
 }
@@ -198,41 +168,40 @@ button:hover#back-to-game {
     margin: auto;
     box-sizing: border-box;
     @media screen and (max-width: 576px) {
-      width: 100%;
-      left: 0;
+        width: 100%;
+        left: 0;
     }
 
-  div {
-      padding: 12px;
-  }
-  
-  .options {
-      border: #2779bd solid 1px;
-      padding: 5px 20px;
-  }
+    div {
+        padding: 12px;
+    }
 
-  .option-label {
-      margin-right: 20px;
-      @media screen and (max-width: 576px) {
-        display: block;
-      }
-  }
+    .options {
+        border: #2779bd solid 1px;
+        padding: 5px 20px;
+    }
 
-  .active-option {
-      background-color: #2779bd;
-      color: ivory;
-  }
+    .option-label {
+        margin-right: 20px;
+        @media screen and (max-width: 576px) {
+            display: block;
+        }
+    }
 
-  #back-to-game {
-      margin-top: 30px;
-  }
+    .active-option {
+        background-color: #2779bd;
+        color: ivory;
+    }
 
-  button.selected#back-to-game {
-      background-color: #2779bd;
-      border: #1c3d5a solid 3px;
-      color: ivory;
-  }
+    #back-to-game {
+        margin-top: 30px;
+    }
+
+    button.selected#back-to-game {
+        background-color: #2779bd;
+        border: #1c3d5a solid 3px;
+        color: ivory;
+    }
 }
 
-
-@import './row';
+@import "./_row.scss";
