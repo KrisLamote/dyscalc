@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { CSSTransition } from "react-transition-group";
+import usePrevious from "../hooks/previous";
 import GameContext from "./GameContext";
 import { pickOne, range } from "../helpers";
 import { OPERATIONS } from "../enums";
@@ -17,6 +18,8 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     const { state } = useContext(GameContext);
     const { upto, operation } = state.options;
     const [target, setTarget] = useState(null);
+    const prevOperation = usePrevious(operation);
+    const prevTarget = usePrevious(target);
     const [term, setTerm] = useState(null);
     const [selected, setSelected] = useState(empty);
     const [isTransitioning, setIsTransitioning] = useState(Array.isArray(targets));
@@ -24,10 +27,15 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
         [`target-${selected.idx}`]: selected.idx !== null,
         error: showErrors && selected.idx !== null && target !== selected.value,
     });
+    const [selectedOperation, setSelectedOperation] = useState(
+        operation !== OPERATIONS.BOTH
+            ? operation
+            : pickOne([OPERATIONS.SUM, OPERATIONS.SUBTRACT])
+    );
 
     // eslint-disable-next-line operator-linebreak
     const label =
-        operation === OPERATIONS.SUBTRACT
+        selectedOperation === OPERATIONS.SUBTRACT
             ? `${term} - ${term - target}`
             : `${term} + ${target - term}`;
 
@@ -42,21 +50,30 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     };
 
     useEffect(() => {
-        // maybe usePrevious could solve this
-        if (target && target <= upto) {
-            setTerm(
-                operation === OPERATIONS.SUBTRACT
-                    ? pickOne(range(target, upto))
-                    : pickOne(range(1, target - 1))
+        if (operation !== prevOperation) {
+            setSelectedOperation(
+                operation !== OPERATIONS.BOTH
+                    ? operation
+                    : pickOne([OPERATIONS.SUM, OPERATIONS.SUBTRACT])
             );
         }
-    }, [target, upto, operation]);
+    }, [operation, prevOperation, prevTarget, selectedOperation]);
 
     useEffect(() => {
         setTarget(pickOne(targets));
         setSelected({ idx: null, value: null });
         setIsTransitioning(Array.isArray(targets));
     }, [targets]);
+
+    useEffect(() => {
+        if (target && target !== prevTarget) {
+            setTerm(
+                selectedOperation === OPERATIONS.SUBTRACT
+                    ? pickOne(range(target, upto))
+                    : pickOne(range(1, target - 1))
+            );
+        }
+    }, [target, upto, operation, prevOperation, prevTarget, selectedOperation]);
 
     return (
         <CSSTransition
