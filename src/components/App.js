@@ -110,6 +110,7 @@ const App = () => {
                                         <Reset
                                             onClick={() => {
                                                 onReset();
+                                                setCurrent({ idx: null, value: null });
                                                 setTargets(generateTargets());
                                             }}
                                         />
