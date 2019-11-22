@@ -1,16 +1,44 @@
+@import "./normalize.css";
+
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-body {
+    font-family: Roboto, Arial, sans-serif;
+    //font-family: Roboto Mono, monospace;
+    //font-family: Acme;
     background-color: ivory;
     color: #453411;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
+#root {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+    .game {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+header {
+    font-family: "Acme", sans-serif;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
+    h2 {
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width: 1200px) {
+    #root {
+        max-width: 1140px;
+    }
+}
 header {
     color: #1a4731;
 }

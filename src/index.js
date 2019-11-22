@@ -1,6 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import "./css/bootstrap.min.css";
 import "./css/App.scss";
 import { IntlProvider } from "react-intl";
 import language, { messages } from "./i18n";
