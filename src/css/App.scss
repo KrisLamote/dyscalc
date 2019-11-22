@@ -3,13 +3,15 @@
 html,
 body {
     font-family: Roboto, Arial, sans-serif;
-    //font-family: Roboto Mono, monospace;
-    //font-family: Acme;
     background-color: ivory;
     color: #453411;
     margin: 0;
     padding: 0;
     height: 100vh;
+}
+
+button {
+    border-radius: 0;
 }
 
 #root {
@@ -23,7 +25,7 @@ body {
 }
 
 header {
-    font-family: "Acme", sans-serif;
+    font-family: Acme, sans-serif;
     margin: 15px 0;
     display: flex;
     justify-content: center;
@@ -31,6 +33,7 @@ header {
     background-color: rgba(0, 0, 0, 0.05);
     h2 {
         text-transform: uppercase;
+        letter-spacing: 0.2rem;
     }
 }
 
@@ -62,8 +65,13 @@ header {
             &__actions {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
+                button {
+                    margin-top: 10px;
+                    padding: 0.75em;
+                    text-transform: uppercase;
+                    font-size: 0.85em;
+                }
             }
         }
     }
@@ -114,38 +122,29 @@ header {
 
 #verify,
 #reset,
-#options {
-    padding-top: 10px;
-}
-
-#verify button,
-#reset button,
-#options button,
+#options,
 button#back-to-game {
-    width: 100%;
     border: #2779bd solid 3px;
-    border-radius: 0;
-    width: 146px;
     @media screen and (max-width: 576px) {
         width: 130px;
     }
 }
 
-#verify button.selected {
+#verify.selected {
     background-color: #f56565;
     color: #9b2c2c;
     border-color: #9b2c2c;
 }
 
-#verify button.selected:hover {
-    background-color: #9b2c2c;
+#verify.selected:hover {
+    background-color: #c53030;
     color: ivory;
-    border-color: #9b2c2c;
+    border-color: #742a2a;
 }
 
-#verify button:hover,
-#reset button:hover,
-#options button:hover,
+#verify:hover,
+#reset:hover,
+#options:hover,
 button:hover#back-to-game {
     background-color: #2779bd;
     border: #1c3d5a solid 3px;

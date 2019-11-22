@@ -15,16 +15,16 @@ const defaultMessages = {
     },
     reset: {
         id: "menu.reset",
-        defaultMessage: "RESET",
+        defaultMessage: "reset",
     },
     verify: {
         on: {
             id: "menu.verify.on",
-            defaultMessage: "VERIFICATION ON",
+            defaultMessage: "verification on",
         },
         off: {
             id: "menu.verify.off",
-            defaultMessage: "VERIFICATION OFF",
+            defaultMessage: "verification off",
         },
     },
 };

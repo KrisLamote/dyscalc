@@ -10,13 +10,9 @@ const Verify = ({ showErrors, toggle }) => {
     });
 
     return (
-        <div className="row justify-content-md-center no-gutters">
-            <div id="verify" className="col-md-auto">
-                <button className={classes} onClick={toggle} type="button">
-                    <FormattedMessage {...messages.verify[showErrors ? "on" : "off"]} />
-                </button>
-            </div>
-        </div>
+        <button id="verify" className={classes} onClick={toggle} type="button">
+            <FormattedMessage {...messages.verify[showErrors ? "on" : "off"]} />
+        </button>
     );
 };
 
