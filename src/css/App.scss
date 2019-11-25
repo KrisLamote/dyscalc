@@ -25,15 +25,35 @@ button {
 }
 
 header {
-    font-family: Acme, sans-serif;
     margin: 15px 0;
+}
+
+.completed {
+    margin-bottom: 15px;
+}
+
+header,
+.completed {
+    font-family: Acme, sans-serif;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    color: #1a4731;
+    background-color: rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.05);
     h2 {
         text-transform: uppercase;
         letter-spacing: 0.2rem;
+    }
+}
+
+.completed {
+    h2 {
+        display: flex;
+        text-align: center;
+        span.message {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
     }
 }
 
@@ -41,9 +61,6 @@ header {
     #root {
         max-width: 1140px;
     }
-}
-header {
-    color: #1a4731;
 }
 
 .app {
