@@ -12,6 +12,16 @@ body {
 
 button {
     border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 0.75em;
+    border: #2779bd solid 3px;
+}
+
+button:hover {
+    background-color: #2779bd;
+    border: #1c3d5a solid 3px;
+    color: ivory;
 }
 
 #root {
@@ -136,16 +146,6 @@ header,
 }
 
 @import "./_target.scss";
-
-#verify,
-#reset,
-#options,
-button#back-to-game {
-    border: #2779bd solid 3px;
-    @media screen and (max-width: 576px) {
-        width: 130px;
-    }
-}
 
 #verify.selected {
     background-color: #f56565;

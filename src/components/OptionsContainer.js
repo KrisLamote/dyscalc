@@ -52,7 +52,7 @@ const OptionsContainer = ({ showOptions, backToGame }) => {
                      */}
                     <div className="backdrop" onClick={backToGame} role="presentation" />
                     <div className="options-container">
-                        <h2>Select your Preferred Options</h2>
+                        <h3>Select your Preferred Options</h3>
                         {toggle}
                         <button onClick={backToGame} id="back-to-game" type="button">
                             Back to Game
