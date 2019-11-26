@@ -199,21 +199,30 @@ button:hover#back-to-game {
 .options-container {
     position: fixed;
     z-index: 200;
-    background-color: white;
+    background-color: ivory;
     width: 70%;
     height: fit-content;
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px black;
-    padding: 35px;
+    padding: 0 35px 35px 35px;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
     margin: auto;
     box-sizing: border-box;
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: 600px) {
+        padding: 0 20px 20px 20px;
         width: 100%;
         left: 0;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-family: Acme, sans-serif;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        color: #1a4731;
+        letter-spacing: 0.1rem;
     }
 
     div {
@@ -227,7 +236,7 @@ button:hover#back-to-game {
 
     .option-label {
         margin-right: 20px;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 600px) {
             display: block;
         }
     }
