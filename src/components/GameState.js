@@ -25,7 +25,17 @@ const GameState = ({ total, children }) => {
     return (
         <>
             {score === 0 ? (
-                <p className="text-white bg-dark text-center">Game Completed!</p>
+                <div className="completed">
+                    <h2>
+                        <span role="img" aria-label="Robot">
+                            🎉
+                        </span>
+                        <span className="message">Game Completed</span>
+                        <span role="img" aria-label="Robot">
+                            🎉
+                        </span>
+                    </h2>
+                </div>
             ) : null}
             {children({ current, onCorrect, onIncorrect, onReset, setCurrent })}
         </>

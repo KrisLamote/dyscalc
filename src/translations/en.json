@@ -1,6 +1,6 @@
 {
-    "menu.options.button": "OPTIONS",
-    "menu.reset": "RESET",
-    "menu.verify.on": "VERIFICATION ON",
-    "menu.verify.off": "VERIFICATION OFF"
+    "menu.options.button": "options",
+    "menu.reset": "reset",
+    "menu.verify.on": "verification on",
+    "menu.verify.off": "verification off"
 }

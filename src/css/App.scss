@@ -1,18 +1,76 @@
+@import "./normalize.css";
+
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-}
-
-body {
+    font-family: Roboto, Arial, sans-serif;
     background-color: ivory;
     color: #453411;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+button {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 0.75em;
+    border: #2779bd solid 3px;
+}
+
+button:hover {
+    background-color: #2779bd;
+    border: #1c3d5a solid 3px;
+    color: ivory;
+}
+
+#root {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 25px;
+    .game {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 header {
+    margin: 15px 0;
+}
+
+.completed {
+    margin-bottom: 15px;
+}
+
+header,
+.completed {
+    font-family: Acme, sans-serif;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
     color: #1a4731;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    h2 {
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+}
+
+.completed {
+    h2 {
+        display: flex;
+        text-align: center;
+        span.message {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #root {
+        max-width: 1140px;
+    }
 }
 
 .app {
@@ -34,8 +92,13 @@ header {
             &__actions {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
+                button {
+                    margin-top: 10px;
+                    padding: 0.75em;
+                    text-transform: uppercase;
+                    font-size: 0.85em;
+                }
             }
         }
     }
@@ -84,44 +147,16 @@ header {
 
 @import "./_target.scss";
 
-#verify,
-#reset,
-#options {
-    padding-top: 10px;
-}
-
-#verify button,
-#reset button,
-#options button,
-button#back-to-game {
-    width: 100%;
-    border: #2779bd solid 3px;
-    border-radius: 0;
-    width: 146px;
-    @media screen and (max-width: 576px) {
-        width: 130px;
-    }
-}
-
-#verify button.selected {
+#verify.selected {
     background-color: #f56565;
     color: #9b2c2c;
     border-color: #9b2c2c;
 }
 
-#verify button.selected:hover {
-    background-color: #9b2c2c;
+#verify.selected:hover {
+    background-color: #c53030;
     color: ivory;
-    border-color: #9b2c2c;
-}
-
-#verify button:hover,
-#reset button:hover,
-#options button:hover,
-button:hover#back-to-game {
-    background-color: #2779bd;
-    border: #1c3d5a solid 3px;
-    color: ivory;
+    border-color: #742a2a;
 }
 
 .error {
@@ -153,13 +188,14 @@ button:hover#back-to-game {
 }
 
 .options-container {
+    line-height: 1rem;
     position: fixed;
     z-index: 200;
-    background-color: white;
-    width: 70%;
+    background-color: ivory;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
     height: fit-content;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
     padding: 35px;
     left: 0;
     top: 0;
@@ -167,25 +203,44 @@ button:hover#back-to-game {
     bottom: 0;
     margin: auto;
     box-sizing: border-box;
-    @media screen and (max-width: 576px) {
-        width: 100%;
-        left: 0;
+
+    h3 {
+        text-transform: uppercase;
+        font-family: Acme, sans-serif;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        color: #1a4731;
+        letter-spacing: 0.1rem;
+        margin-top: 0;
     }
 
-    div {
-        padding: 12px;
+    .options-wrap {
+        display: flex;
+        flex-direction: column;
+        .option-line {
+            display: flex;
+            align-items: baseline;
+            .option-label {
+                flex: 1 1 30%;
+            }
+
+            .option-buttons {
+                flex: 1 1 70%;
+            }
+        }
+    }
+
+    .option-label {
+        margin: 5px 0;
+    }
+    .option-buttons {
+        margin: 5px 0;
+        button {
+            min-width: 40px;
+        }
     }
 
     .options {
         border: #2779bd solid 1px;
-        padding: 5px 20px;
-    }
-
-    .option-label {
-        margin-right: 20px;
-        @media screen and (max-width: 576px) {
-            display: block;
-        }
     }
 
     .active-option {
@@ -197,10 +252,13 @@ button:hover#back-to-game {
         margin-top: 30px;
     }
 
-    button.selected#back-to-game {
-        background-color: #2779bd;
-        border: #1c3d5a solid 3px;
-        color: ivory;
+    @media screen and (max-width: 768px) {
+        padding: 0 20px 20px 20px;
+        width: 100%;
+        left: 0;
+        h3 {
+            letter-spacing: normal;
+        }
     }
 }
 

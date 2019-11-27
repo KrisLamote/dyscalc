@@ -68,7 +68,7 @@ const App = () => {
     }, [targets]);
 
     return (
-        <div className="container app">
+        <div className="game">
             <Header className="app__header" />
             <GameContext.Provider value={{ state, dispatch }}>
                 <GameState total={16}>

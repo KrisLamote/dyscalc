@@ -20,18 +20,15 @@ const Reset = ({ onClick }) => {
     }, [disabled, onClick]);
 
     return (
-        <div className="row justify-content-md-center no-gutters">
-            <div id="reset" className="col-md-auto">
-                <button
-                    className="btn btn-sm btn-outline-primary"
-                    disabled={disabled}
-                    onClick={handleClick}
-                    type="button"
-                >
-                    <FormattedMessage {...messages.reset} />
-                </button>
-            </div>
-        </div>
+        <button
+            id="reset"
+            className="btn btn-sm btn-outline-primary"
+            disabled={disabled}
+            onClick={handleClick}
+            type="button"
+        >
+            <FormattedMessage {...messages.reset} />
+        </button>
     );
 };
 
