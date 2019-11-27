@@ -1,3 +1,13 @@
+@import "./colors.scss";
+
+#targets {
+    border: 2px solid #453411;
+    width: 100%;
+    @media (min-width: 576px) {
+        width: 150px;
+    }
+}
+
 .target.selected {
     font-style: italic;
     font-weight: bold;
@@ -7,46 +17,46 @@
 }
 
 .target-0.selected {
-    border-color: #de751f;
+    border-color: $targetBorder0;
 }
 
 .target-1.selected {
-    border-color: #f2d024;
+    border-color: $targetBorder1;
 }
 
 .target-2.selected {
-    border-color: #1f9d55;
+    border-color: $targetBorder2;
 }
 
 .target-3.selected {
-    border-color: #4299e1;
+    border-color: $targetBorder3;
 }
 
 .target-4.selected {
-    border-color: #9f7aea;
+    border-color: $targetBorder4;
 }
 
 .target-0 {
-    color: #613b1f;
-    background-color: #f6993f;
+    color: $targetColor0;
+    background-color: $target0;
 }
 
 .target-1 {
-    color: #684f1d;
-    background-color: #ffed4a;
+    color: $targetColor1;
+    background-color: $target1;
 }
 
 .target-2 {
-    color: #1a4731;
-    background-color: #38c172;
+    color: $targetColor2;
+    background-color: $target2;
 }
 
 .target-3 {
-    color: #2b6cb0;
-    background-color: #90cdf4;
+    color: $targetColor3;
+    background-color: $target3;
 }
 
 .target-4 {
-    color: #6b46c1;
-    background-color: #d6bcfa;
+    color: $targetColor4;
+    background-color: $target4;
 }
