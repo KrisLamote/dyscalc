@@ -1,27 +1,14 @@
 @import "./normalize.css";
+@import "./colors.scss";
 
 html,
 body {
     font-family: Roboto, Arial, sans-serif;
-    background-color: ivory;
-    color: #453411;
+    background-color: $back;
+    color: $main;
     margin: 0;
     padding: 0;
     height: 100vh;
-}
-
-button {
-    border-radius: 0;
-    text-transform: uppercase;
-    font-size: 0.85em;
-    padding: 0.75em;
-    border: #2779bd solid 3px;
-}
-
-button:hover {
-    background-color: #2779bd;
-    border: #1c3d5a solid 3px;
-    color: ivory;
 }
 
 #root {
@@ -34,37 +21,22 @@ button:hover {
     }
 }
 
-header {
-    margin: 15px 0;
+/* header & completed section */
+@import "./header.scss";
+
+/* general button styling */
+button {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    padding: 0.75em;
+    border: $btnBorder solid 3px;
 }
 
-.completed {
-    margin-bottom: 15px;
-}
-
-header,
-.completed {
-    font-family: Acme, sans-serif;
-    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    color: #1a4731;
-    background-color: rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
-    h2 {
-        text-transform: uppercase;
-        letter-spacing: 0.2rem;
-    }
-}
-
-.completed {
-    h2 {
-        display: flex;
-        text-align: center;
-        span.message {
-            padding-left: 1em;
-            padding-right: 1em;
-        }
-    }
+button:hover {
+    background-color: $btnBorder;
+    border: $btnBorderDark solid 3px;
+    color: $back;
 }
 
 @media (min-width: 1200px) {
@@ -123,20 +95,12 @@ header,
 }
 
 #board {
-    border: 2px solid #453411;
-}
-
-#targets {
-    border: 2px solid #453411;
-    width: 100%;
-    @media (min-width: 576px) {
-        width: 150px;
-    }
+    border: 2px solid $main;
 }
 
 .cell {
     padding: 10px;
-    background-color: ivory;
+    background-color: $back;
     border: 1px solid #563d7c33;
     cursor: pointer;
 }
@@ -155,13 +119,13 @@ header,
 
 #verify.selected:hover {
     background-color: #c53030;
-    color: ivory;
+    color: $back;
     border-color: #742a2a;
 }
 
 .error {
-    border: #e3342f solid 4px;
-    color: #cc1f1a;
+    border: $errorBorder solid 4px;
+    color: $errorColor;
     padding: 7px;
 }
 
@@ -177,89 +141,5 @@ header,
     transition: opacity 1000ms linear;
 }
 
-.backdrop {
-    height: 100%;
-    width: 100%;
-    z-index: 100;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.options-container {
-    line-height: 1rem;
-    position: fixed;
-    z-index: 200;
-    background-color: ivory;
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    height: fit-content;
-    padding: 35px;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    box-sizing: border-box;
-
-    h3 {
-        text-transform: uppercase;
-        font-family: Acme, sans-serif;
-        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-        color: #1a4731;
-        letter-spacing: 0.1rem;
-        margin-top: 0;
-    }
-
-    .options-wrap {
-        display: flex;
-        flex-direction: column;
-        .option-line {
-            display: flex;
-            align-items: baseline;
-            .option-label {
-                flex: 1 1 30%;
-            }
-
-            .option-buttons {
-                flex: 1 1 70%;
-            }
-        }
-    }
-
-    .option-label {
-        margin: 5px 0;
-    }
-    .option-buttons {
-        margin: 5px 0;
-        button {
-            min-width: 40px;
-        }
-    }
-
-    .options {
-        border: #2779bd solid 1px;
-    }
-
-    .active-option {
-        background-color: #2779bd;
-        color: ivory;
-    }
-
-    #back-to-game {
-        margin-top: 30px;
-    }
-
-    @media screen and (max-width: 768px) {
-        padding: 0 20px 20px 20px;
-        width: 100%;
-        left: 0;
-        h3 {
-            letter-spacing: normal;
-        }
-    }
-}
-
+@import "./options.scss";
 @import "./_row.scss";
