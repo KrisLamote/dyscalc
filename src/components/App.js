@@ -68,8 +68,8 @@ const App = () => {
     }, [targets]);
 
     return (
-        <div className="game">
-            <Header className="app__header" />
+        <>
+            <Header />
             <GameContext.Provider value={{ state, dispatch }}>
                 <GameState total={16}>
                     {state => {
@@ -124,7 +124,7 @@ const App = () => {
                     }}
                 </GameState>
             </GameContext.Provider>
-        </div>
+        </>
     );
 };
 

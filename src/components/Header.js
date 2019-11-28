@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = () => (
-    <header className="py-5 text-center">
+    <header>
         <h2>Dyscalc</h2>
     </header>
 );

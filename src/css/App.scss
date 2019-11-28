@@ -15,10 +15,8 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 25px;
-    .game {
-        display: flex;
-        flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
 }
 
 /* header & completed section */
@@ -45,32 +43,28 @@ button:hover {
     }
 }
 
-.app {
+.app__body {
     display: flex;
-    flex-direction: column;
-    &__body {
+    flex-direction: row;
+    &__board {
+        flex: 1;
+        margin-right: 20px;
+        padding-bottom: 20px;
+    }
+    &__controls {
         display: flex;
-        flex-direction: row;
-        &__board {
-            flex: 1;
-            margin-right: 20px;
-            padding-bottom: 20px;
-        }
-        &__controls {
+        align-content: center;
+        justify-content: space-between;
+        flex-direction: column;
+        &__actions {
             display: flex;
-            align-content: center;
-            justify-content: space-between;
             flex-direction: column;
-            &__actions {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                button {
-                    margin-top: 10px;
-                    padding: 0.75em;
-                    text-transform: uppercase;
-                    font-size: 0.85em;
-                }
+            justify-content: center;
+            button {
+                margin-top: 10px;
+                padding: 0.75em;
+                text-transform: uppercase;
+                font-size: 0.85em;
             }
         }
     }
