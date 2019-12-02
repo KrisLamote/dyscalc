@@ -81,8 +81,8 @@ const App = () => {
                             setCurrent,
                         } = state;
                         return (
-                            <div className="app__body">
-                                <div className="app__body__board">
+                            <div className="game">
+                                <div className="board">
                                     <Board
                                         current={current}
                                         showErrors={showErrors}
@@ -95,14 +95,14 @@ const App = () => {
                                         backToGame={() => setShowOptions(!showOptions)}
                                     />
                                 </div>
-                                <div className="app__body__controls">
-                                    <div className="app__body__controls__targets">
+                                <div className="controls">
+                                    <div className="targets">
                                         <Targets
                                             targets={targets}
                                             setCurrent={setCurrent}
                                         />
                                     </div>
-                                    <div className="app__body__controls__actions">
+                                    <div className="actions">
                                         <Verify
                                             showErrors={showErrors}
                                             toggle={() => setShowErrors(!showErrors)}

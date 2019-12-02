@@ -43,20 +43,20 @@ button:hover {
     }
 }
 
-.app__body {
+.game {
     display: flex;
     flex-direction: row;
-    &__board {
+    .board {
         flex: 1;
         margin-right: 20px;
         padding-bottom: 20px;
     }
-    &__controls {
+    .controls {
         display: flex;
         align-content: center;
         justify-content: space-between;
         flex-direction: column;
-        &__actions {
+        .actions {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -71,24 +71,22 @@ button:hover {
 }
 
 @media all and (max-width: 768px) {
-    .app {
-        &__body {
-            flex-direction: column-reverse;
-            &__board {
-                margin-right: 0;
-            }
-            &__controls {
-                flex-direction: row;
-                margin-bottom: 20px;
-                &__actions {
-                    margin-left: 14px;
-                }
+    .game {
+        flex-direction: column-reverse;
+        .board {
+            margin-right: 0;
+        }
+        .controls {
+            flex-direction: row;
+            margin-bottom: 20px;
+            .actions {
+                margin-left: 14px;
             }
         }
     }
 }
 
-#board {
+#tiles {
     border: 2px solid $main;
 }
 
@@ -103,7 +101,7 @@ button:hover {
     text-align: center;
 }
 
-@import "./_target.scss";
+@import "./targets.scss";
 
 #verify.selected {
     background-color: #f56565;
@@ -136,4 +134,4 @@ button:hover {
 }
 
 @import "./options.scss";
-@import "./_row.scss";
+@import "./rows.scss";
