@@ -4,7 +4,7 @@ import Row from "./Row";
 
 const Board = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     return (
-        <div id="tiles">
+        <>
             <Row
                 current={current}
                 showErrors={showErrors}
@@ -33,7 +33,7 @@ const Board = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
                 onCorrect={onCorrect}
                 onIncorrect={onIncorrect}
             />
-        </div>
+        </>
     );
 };
 
