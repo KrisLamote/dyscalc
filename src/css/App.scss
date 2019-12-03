@@ -48,8 +48,14 @@ button:hover {
     flex-direction: row;
     .board {
         flex: 1;
+        border: 2px solid $main;
         margin-right: 20px;
-        padding-bottom: 20px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        .row {
+            flex: 1;
+        }
     }
     .controls {
         display: flex;
@@ -86,8 +92,12 @@ button:hover {
     }
 }
 
-#tiles {
-    border: 2px solid $main;
+.row {
+    display: flex;
+    flex-direction: row;
+    .cell {
+        flex: 1;
+    }
 }
 
 .cell {
@@ -95,10 +105,13 @@ button:hover {
     background-color: $back;
     border: 1px solid #563d7c33;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cell-content {
-    text-align: center;
+    //text-align: center;
 }
 
 @import "./targets.scss";
@@ -134,4 +147,3 @@ button:hover {
 }
 
 @import "./options.scss";
-@import "./rows.scss";
