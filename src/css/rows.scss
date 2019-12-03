@@ -1,0 +1,7 @@
+.app-row {
+  display: flex;
+  flex-direction: row;
+  &__cell {
+    flex: 1;
+  }
+}

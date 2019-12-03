@@ -59,6 +59,7 @@ button:hover {
     }
     .controls {
         display: flex;
+    }
         align-content: center;
         justify-content: space-between;
         flex-direction: column;
@@ -98,7 +99,6 @@ button:hover {
     .cell {
         flex: 1;
     }
-}
 
 .cell {
     padding: 10px;
