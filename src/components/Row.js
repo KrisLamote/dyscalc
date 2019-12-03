@@ -4,35 +4,11 @@ import Cell from "./Cell";
 
 const Row = ({ current, showErrors, targets, ...rest }) => {
     return (
-        <div className="app-row row no-gutters">
-            <Cell
-                className="app-row__cell"
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                {...rest}
-            />
-            <Cell
-                className="app-row__cell"
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                {...rest}
-            />
-            <Cell
-                className="app-row__cell"
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                {...rest}
-            />
-            <Cell
-                className="app-row__cell"
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                {...rest}
-            />
+        <div className="row">
+            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
+            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
+            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
+            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
         </div>
     );
 };

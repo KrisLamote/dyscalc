@@ -23,7 +23,7 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     const [term, setTerm] = useState(null);
     const [selected, setSelected] = useState(empty);
     const [isTransitioning, setIsTransitioning] = useState(Array.isArray(targets));
-    const classes = classNames("app-row__cell cell", {
+    const classes = classNames("cell", {
         [`target-${selected.idx}`]: selected.idx !== null,
         error: showErrors && selected.idx !== null && target !== selected.value,
     });

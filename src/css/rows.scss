@@ -1,7 +1,7 @@
-.app-row {
-  display: flex;
-  flex-direction: row;
-  &__cell {
-    flex: 1;
-  }
+.row {
+    display: flex;
+    flex-direction: row;
+    .cell {
+        flex: 1;
+    }
 }
