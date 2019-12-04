@@ -82,19 +82,17 @@ const App = () => {
                         } = state;
                         return (
                             <div className="game">
-                                <div className="board">
-                                    <Board
-                                        current={current}
-                                        showErrors={showErrors}
-                                        targets={targets}
-                                        onCorrect={onCorrect}
-                                        onIncorrect={onIncorrect}
-                                    />
-                                    <OptionsContainer
-                                        showOptions={showOptions}
-                                        backToGame={() => setShowOptions(!showOptions)}
-                                    />
-                                </div>
+                                <Board
+                                    current={current}
+                                    showErrors={showErrors}
+                                    targets={targets}
+                                    onCorrect={onCorrect}
+                                    onIncorrect={onIncorrect}
+                                />
+                                <OptionsContainer
+                                    showOptions={showOptions}
+                                    backToGame={() => setShowOptions(!showOptions)}
+                                />
                                 <div className="controls">
                                     <div className="targets">
                                         <Targets
