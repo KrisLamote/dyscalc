@@ -1,14 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Cell from "./Cell";
+import { range } from "../helpers";
 
 const Row = ({ current, showErrors, targets, ...rest }) => {
     return (
         <div className="row">
-            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
-            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
-            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
-            <Cell current={current} showErrors={showErrors} targets={targets} {...rest} />
+            {range(1, 4).map(key => (
+                <Cell
+                    key={key.toString()}
+                    current={current}
+                    showErrors={showErrors}
+                    targets={targets}
+                    {...rest}
+                />
+            ))}
         </div>
     );
 };

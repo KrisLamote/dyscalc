@@ -1,39 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Row from "./Row";
+import { range } from "../helpers";
 
 const Board = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     return (
-        <>
-            <Row
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                onCorrect={onCorrect}
-                onIncorrect={onIncorrect}
-            />
-            <Row
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                onCorrect={onCorrect}
-                onIncorrect={onIncorrect}
-            />
-            <Row
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                onCorrect={onCorrect}
-                onIncorrect={onIncorrect}
-            />
-            <Row
-                current={current}
-                showErrors={showErrors}
-                targets={targets}
-                onCorrect={onCorrect}
-                onIncorrect={onIncorrect}
-            />
-        </>
+        <div className="board">
+            {range(1, 4).map(key => (
+                <Row
+                    key={key.toString()}
+                    current={current}
+                    showErrors={showErrors}
+                    targets={targets}
+                    onCorrect={onCorrect}
+                    onIncorrect={onIncorrect}
+                />
+            ))}
+        </div>
     );
 };
 
