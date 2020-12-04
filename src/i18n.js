@@ -1,14 +1,14 @@
-import en from "./translations/en";
-import it from "./translations/it";
-import ka from "./translations/ka";
-import pt from "./translations/pt";
-import ro from "./translations/ro";
-import ru from "./translations/ru";
-import ta from "./translations/ta";
-import tr from "./translations/tr";
-import ur from "./translations/ur";
-import hu from "./translations/hu";
-import es from "./translations/es";
+import en from "./translations/en.json";
+import it from "./translations/it.json";
+import ka from "./translations/ka.json";
+import pt from "./translations/pt.json";
+import ro from "./translations/ro.json";
+import ru from "./translations/ru.json";
+import ta from "./translations/ta.json";
+import tr from "./translations/tr.json";
+import ur from "./translations/ur.json";
+import hu from "./translations/hu.json";
+import es from "./translations/es.json";
 
 const language = navigator.language.split(/[-_]/)[0];
 
