@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-const OptionsToggle = ({ currentChoice, handleClick, label, options }) => (
+const OptionToggle = ({ currentChoice, handleClick, key, label, options }) => (
     <div className="option-line">
         {/* eslint-disable react/jsx-one-expression-per-line */}
-        <label className="option-label">
+        <label htmlFor={key} className="option-label">
             <span>{`${label}:`}</span>
         </label>
-        <div className="option-buttons">
+        <div id={key} className="option-buttons">
             {options.map(option => {
                 const classes = classNames("options", {
                     "active-option": option === currentChoice,
@@ -30,15 +30,16 @@ const OptionsToggle = ({ currentChoice, handleClick, label, options }) => (
     </div>
 );
 
-OptionsToggle.defaultProps = {
+OptionToggle.defaultProps = {
     currentChoice: null,
 };
 
-OptionsToggle.propTypes = {
+OptionToggle.propTypes = {
     currentChoice: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     handleClick: PropTypes.func.isRequired,
+    key: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
     options: PropTypes.array.isRequired,
 };
 
-export default OptionsToggle;
+export default OptionToggle;
