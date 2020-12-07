@@ -9,7 +9,7 @@ const OptionToggle = ({ currentChoice, handleClick, key, label, options }) => (
             <span>{`${label}:`}</span>
         </label>
         <div id={key} className="option-buttons">
-            {options.map(option => {
+            {options.map((option) => {
                 const classes = classNames("options", {
                     "active-option": option === currentChoice,
                 });

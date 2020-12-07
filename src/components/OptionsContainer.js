@@ -30,13 +30,13 @@ const OptionsContainer = ({ showOptions, backToGame }) => {
         });
     };
 
-    const toggle = Object.keys(options).map(optionKey => (
+    const toggle = Object.keys(options).map((optionKey) => (
         <OptionToggle
             key={optionKey}
             label={optionKey.toUpperCase()}
             options={allOptions[optionKey]}
             currentChoice={options[optionKey]}
-            handleClick={event => handleClick(optionKey, event.target.innerHTML)}
+            handleClick={(event) => handleClick(optionKey, event.target.innerHTML)}
         />
     ));
 

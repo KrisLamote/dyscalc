@@ -39,7 +39,7 @@ const Cell = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
             ? `${term} - ${term - target}`
             : `${term} + ${target - term}`;
 
-    const handleClick = selection => {
+    const handleClick = (selection) => {
         const newVal = selection.idx === selected.idx ? empty : selection;
         if (selected.value !== target && newVal.value === target) {
             onCorrect();

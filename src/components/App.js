@@ -14,31 +14,31 @@ import GameContext, { initialOptionState } from "./GameContext";
 function optionReducer(state, action) {
     const options = { ...state.options };
     switch (action.type) {
-    case ACTION_TYPE.CHANGE_UPTO:
-        options.upto = action.payload.data;
-        return {
-            ...state,
-            options,
-        };
-    case ACTION_TYPE.CHANGE_TARGET:
-        options.target = action.payload.data;
-        return {
-            ...state,
-            options,
-        };
-    case ACTION_TYPE.CHANGE_OPERATION:
-        options.operation = action.payload.data;
-        return {
-            ...state,
-            options,
-        };
-    case ACTION_TYPE.CHANGE_SCORE:
-        return {
-            ...state,
-            score: action.payload.data,
-        };
-    default:
-        throw new Error("No action type matched");
+        case ACTION_TYPE.CHANGE_UPTO:
+            options.upto = action.payload.data;
+            return {
+                ...state,
+                options,
+            };
+        case ACTION_TYPE.CHANGE_TARGET:
+            options.target = action.payload.data;
+            return {
+                ...state,
+                options,
+            };
+        case ACTION_TYPE.CHANGE_OPERATION:
+            options.operation = action.payload.data;
+            return {
+                ...state,
+                options,
+            };
+        case ACTION_TYPE.CHANGE_SCORE:
+            return {
+                ...state,
+                score: action.payload.data,
+            };
+        default:
+            throw new Error("No action type matched");
     }
 }
 
@@ -72,7 +72,7 @@ const App = () => {
             <Header />
             <GameContext.Provider value={{ state, dispatch }}>
                 <GameState total={16}>
-                    {gameState => {
+                    {(gameState) => {
                         const {
                             current,
                             onCorrect,
