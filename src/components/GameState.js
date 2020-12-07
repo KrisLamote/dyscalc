@@ -9,7 +9,7 @@ const GameState = ({ total, children }) => {
     const { state, dispatch } = useContext(GameContext);
     const { score } = state;
 
-    const setScore = (newScore) => {
+    const setScore = newScore => {
         dispatch({
             type: ACTION_TYPE.CHANGE_SCORE,
             payload: {

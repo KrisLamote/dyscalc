@@ -6,7 +6,7 @@ export const range = (start, end) => {
 };
 
 // pickOne(arr): returns a random element from the provided array
-export const pickOne = (arr) => arr[Math.floor(Math.random() * arr.length)];
+export const pickOne = arr => arr[Math.floor(Math.random() * arr.length)];
 
 /**
  * pickSome(arr, amount)

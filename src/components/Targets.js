@@ -5,7 +5,7 @@ import TargetCell from "./TargetCell";
 const Targets = ({ setCurrent, targets }) => {
     const [activeTarget, setActiveTarget] = useState(null);
 
-    const handleTargetClick = (idx) => {
+    const handleTargetClick = idx => {
         const newValue = activeTarget === idx ? null : idx;
         setActiveTarget(newValue);
         setCurrent(

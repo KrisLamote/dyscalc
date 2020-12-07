@@ -54,7 +54,7 @@ describe("pickSome", () => {
     it("returns the number of elements in array when requested", () => {
         const array = ["this", "that", "those", "these"];
 
-        [1, 2, 3, 4].forEach((number) =>
+        [1, 2, 3, 4].forEach(number =>
             expect(pickSome(array, number).length).toEqual(number)
         );
     });

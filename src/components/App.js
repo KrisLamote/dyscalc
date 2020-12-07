@@ -72,7 +72,7 @@ const App = () => {
             <Header />
             <GameContext.Provider value={{ state, dispatch }}>
                 <GameState total={16}>
-                    {(gameState) => {
+                    {gameState => {
                         const {
                             current,
                             onCorrect,

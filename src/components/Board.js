@@ -6,7 +6,7 @@ import { range } from "../helpers";
 const Board = ({ current, showErrors, targets, onCorrect, onIncorrect }) => {
     return (
         <div className="board">
-            {range(1, 4).map((key) => (
+            {range(1, 4).map(key => (
                 <Row
                     key={key.toString()}
                     current={current}
