@@ -12,7 +12,19 @@ import es from "./translations/es.json";
 
 const language = navigator.language.split(/[-_]/)[0];
 
-export const appLocales = ["en", "it", "ka", "pt", "ro", "ru", "ta", "tr", "ur", "hu", "es"];
+export const appLocales = [
+    "en",
+    "it",
+    "ka",
+    "pt",
+    "ro",
+    "ru",
+    "ta",
+    "tr",
+    "ur",
+    "hu",
+    "es",
+];
 export const messages = { en, it, ka, pt, ro, ru, ta, tr, ur, hu, es };
 
 export default language;
